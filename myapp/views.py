@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from django.shortcuts import render ,HttpResponse,redirect
-from myapp.models import Contact
+from myapp.models import Contact, Feedback
 from datetime import datetime
 from django.contrib.auth import authenticate ,login,logout
 from django.contrib.auth.models import User
@@ -32,11 +32,11 @@ def logoutuser(request):
 def contact(request):
     if request.method=="POST":
         name=request.POST.get('name')
-        password=request.POST.get('password')
-        email=request.POST.get('email')
-        number=request.POST.get('number')
-        contact=Contact(name=name,password=password,email=email,number=number)
-        contact.save()
+        feedback=request.POST.get('feedback')
+        suggestion=request.POST.get('suggestion')
+        feedback=Feedback(name=name,feedback=feedback,suggestion=suggestion)
+        feedback.save()
+
 
     return render(request,"contact.html")
 def signup(request):

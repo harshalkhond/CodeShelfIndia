@@ -38,33 +38,33 @@
           <p>Student at PICT,PUNE</p>
           <p><a class="btn btn-secondary" href="https://www.instagram.com/harshalkhond/" role="button">View details »</a></p>
         </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
+       <div class="col-lg-4">
           <title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text></svg>
   
           <h2>programs</h2>
-          <p><li style="margin-bottom: 10px; "><a href="bst.html" style="text-decoration: none;color: aliceblue;">BST</a></li>
-            <li style="margin-bottom: 10px;"><a href="common.html" style="text-decoration: none;color: aliceblue;">common elements in list</a></li>
-            <li style="margin-bottom: 10px;"><a href="stack.html" style="text-decoration: none;color: aliceblue;">stack using array and structures</a></li>
-            <li style="margin-bottom: 10px;"><a href="queuepointer.html" style="text-decoration: none;color: aliceblue;">queue using array of structures</a></li>
-            <li style="margin-bottom: 10px;"><a href="stackpointer.html" style="text-decoration: none;color: aliceblue;">stack using pointer to arrays</a></li>
-            <li style="margin-bottom: 10px;"><a href="linked.html" style="text-decoration: none;color: aliceblue;">Operations on linked list</a></li>
-  <li style="margin-bottom: 10px;"><a href="qlink.html" style="text-decoration: none;color: aliceblue;">queue using linked list-style-type</a></li>
+          <p><li style="margin-bottom: 10px; "><a href="{% url 'bst' %}" style="text-decoration: none;color: aliceblue;">BST</a></li>
+            <li style="margin-bottom: 10px;"><a href="{% url 'common' %}" style="text-decoration: none;color: aliceblue;">common elements in list</a></li>
+            <li style="margin-bottom: 10px;"><a href="{% url 'stack' %}" style="text-decoration: none;color: aliceblue;">stack using array and structures</a></li>
+            <li style="margin-bottom: 10px;"><a href="{% url 'queuepointer' %}" style="text-decoration: none;color: aliceblue;">queue using array of structures</a></li>
+            <li style="margin-bottom: 10px;"><a href="{% url 'stackpointer' %}" style="text-decoration: none;color: aliceblue;">stack using pointer to arrays</a></li>
+            <li style="margin-bottom: 10px;"><a href="{% url 'linked' %}" style="text-decoration: none;color: aliceblue;">Operations on linked list</a></li>
+  <li style="margin-bottom: 10px;"><a href="{% url 'qlink' %}" style="text-decoration: none;color: aliceblue;">queue using linked list-style-type</a></li>
   
 
 </p>
-          <p><a class="btn btn-secondary" href="new.html" role="button">View details »</a></p>
+          <p><a class="btn btn-secondary" href="{% url 'new' %}" role="button">View details »</a></p>
         </div>
         <div class="col-lg-4">
           <title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text>
   
           <h2>CODESHELF</h2>
-          <P><li style="margin-bottom: 10px;"><a href="index.html" style="text-decoration: none;color: aliceblue;">Home</a></li>
-          <li style="margin-bottom: 10px; "><a href="Dsa.html" style="text-decoration: none;color: aliceblue;">Data structures</a></li>
-          <li style="margin-bottom: 10px; "><a href="about.html" style="text-decoration: none;color: aliceblue;">About us</a></li>
+          <P><li style="margin-bottom: 10px;"><a href="{% url 'myapp' %}" style="text-decoration: none;color: aliceblue;">Home</a></li>
+          <li style="margin-bottom: 10px; "><a href="{% url 'Dsa' %}" style="text-decoration: none;color: aliceblue;">Data structures</a></li>
+          <li style="margin-bottom: 10px; "><a href="{% url 'about' %}" style="text-decoration: none;color: aliceblue;">About us</a></li>
           <!-- <li style="margin-bottom: 10px; "><a href="query.html" style="text-decoration: none;color: aliceblue;">Queries</a></li> -->
         </P>
-          <p><a class="btn btn-secondary" href="https://forms.gle/cqYsMnUHrChsfeZA6" role="button">Contact us »</a></p>
+          <p><a class="btn btn-secondary" href="{% url 'contact' %}" role="button">Contact us »</a></p>
+          
         </div>
-      </div>
 {% endblock body %}
     
