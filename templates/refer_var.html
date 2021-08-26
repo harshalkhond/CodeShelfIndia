@@ -1,0 +1,47 @@
+{% extends 'base2.html' %}
+{% block heading %}c++ program to declare the reference variable{% endblock heading %}
+{% block code %}      //Write a //Write a c++ program to declare the reference variable<br>
+
+#include <iostream><br>
+using namespace std;<br>
+int main()<br>
+{<br>
+	int a;<br>
+	cout<<"Enter the numbers ";<br>
+	cin>>a;<br>
+	cout<<"Entered number is "<<a;<br>
+	cout<<"\n--------------------------------";<br>
+	int &b=a;<br>
+	cout<<"\na="<<a<<"\nb="<<b;<br>
+	<br>
+	b=20;<br>
+	cout<<"\na="<<a<<"\nb="<<b;<br>
+<br>
+	a++;<br>
+	cout<<"\na="<<a<<"\nb="<<b;<br>
+<br>
+	return 0;<br>
+}<br>
+	<br>
+<br>
+        #include <iostream><br>
+        using namespace std;<br>
+        int main()<br>
+        {<br>
+            int a;<br>
+            cout<<"Enter the numbers ";<br>
+            cin>>a;<br>
+            cout<<"Entered number is "<<a;<br>
+            cout<<"\n--------------------------------";<br>
+            int &b=a;<br>
+            cout<<"\na="<<a<<"\nb="<<b;<br>
+            <br>
+            b=20;<br>
+            cout<<"\na="<<a<<"\nb="<<b;<br>
+        <br>
+            a++;<br>
+            cout<<"\na="<<a<<"\nb="<<b;<br>
+        <br>
+            return 0;<br>
+        }<br>
+            <br>{% endblock code %}

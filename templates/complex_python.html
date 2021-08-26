@@ -1,0 +1,30 @@
+{% extends 'base2.html' %}
+{% block heading %}C program to perform operations on stack (using array and structures){% endblock heading %}
+{% block code %}def add(a,b,c,d):<br>
+        real_sum=a+c<br>
+        imag_sum=b+d<br>
+        print(f"The sum of complex number is {real_sum}+{imag_sum}i")<br>
+        def sub(a,b,c,d):<br>
+        real_sub=a-c<br>
+        imag_sub=b-d<br>
+        print(f"The substraction of complex number is {real_sub}+{imag_sub}i")<br>
+        def multi(a,b,c,d):<br>
+        real_product=a*c-b*d<br>
+        imag_product=a*d+c*b<br>
+        print(f"The multiplication of complex number is {real_product}+{imag_product}i")<br>
+        <br>
+        <br>
+        n=int(input("Real part of first complex number : "))<br>
+        p=int(input("Enter imaginary part of first complex number"))<br>
+        print(f"Entered complex number is {n}+{p}i")<br>
+        n_=int(input("Real part of first complex number : "))<br>
+        p_=int(input("Enter imaginary part of first complex number"))<br>
+        print(f"Entered complex number is {n_}+{p_}i")<br>
+        n=int(input("Enter operation you want to perform\n1.Add\n2.Sub\n3.Division\n4.multiplication"))<br>
+        if (n==1):<br>
+        add(n,p,n_,p_)<br>
+        elif (n==2):<br>
+        sub(n,p,n_,p_)<br>
+        elif (n==3):<br>
+        multi(n,p,n_,p_)<br>{% endblock code %}
+

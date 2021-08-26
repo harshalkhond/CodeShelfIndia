@@ -1,0 +1,85 @@
+{% extends 'base2.html' %}
+{% block heading %}C program to perform operations on stack (using array and structures){% endblock heading %}
+{% block code %}<code>#include <<x>stdio.h></code> <br>
+            # define MAXIMUM 10<br>
+            struct stack<br>
+            {<br>
+              int stack_arr[MAXIMUM];<br>
+              int top;<br>
+            }stk;<br>
+            <br>
+            void push()<br>
+            {<br>
+              if (stk.top==(MAXIMUM-1))<br>
+              {<br>
+              printf("STACK OVERFLOW!!!!!");	<br>
+              }<br>
+              else<br>
+              {<br>
+                int element;<br>
+                printf("Enter element to enter in stack : ");<br>
+                scanf("%d",&element);<br>
+                stk.top+=1;<br>
+                stk.stack_arr[stk.top]=element;<br>
+                  <br>
+                  <br>
+              }<br>
+            <br>
+            }<br>
+            void display()<br>
+            {<br>
+              int i;<br>
+              printf("current stack elements\n");<br>
+              for (i=stk.top;i>=0;i--)<br>
+              {<br>
+                printf("%d\n",stk.stack_arr[i]);<br>
+              }<br>
+              <br>
+            }<br>
+            void pop()<br>
+            {<br>
+              int popped_num;<br>
+              if (stk.top==-1)<br>
+                  printf("STACK IS EMPTY!!!\n");<br>
+              else<br>
+              {<br>
+                  popped_num=stk.stack_arr[stk.top];<br>
+                  printf("Number %d successfully popped\n",popped_num);<br>
+                stk.top-=1;<br>
+              }<br>
+            }<br>
+            void main()<br>
+            {<br>
+                 printf("ROLL NO : 22318\n");<br>
+                 stk.top=-1;<br>
+                 int choice=1;<br>
+                 int choice1;<br>
+                 do<br>
+                 {<br>
+                   printf("Enter choice :\n 1. ADD ELEMENT \n 2. DELETE ELEMENT \n 3. DISPLAY STACK\n");<br>
+                  scanf("%d",&choice1);<br>
+                  <br>
+                  switch (choice1)<br>
+                  {<br>
+                    case 1:<br>
+                      push();<br>
+                      break;<br>
+                    case 2:<br>
+                      pop();<br>
+                      break;<br>
+                    case 3:<br>
+                      display();<br>
+                      break;<br>
+                    default:<br>
+                      printf("INVALID INPUT\n");<br>
+                      break;<br>
+                }<br>
+                printf("\n PRESS 1 TO CONTINUE.......\n PRESS 0 TO EXIT.........\n");<br>
+                  scanf("%d", &choice);<br>
+                 }while (choice==1);<br>
+                 <br>
+                  <br>
+                  <br>
+                    <br>
+            }<br>
+        {% endblock code %}

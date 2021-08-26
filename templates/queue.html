@@ -1,0 +1,91 @@
+{% extends 'base2.html' %}
+{% block heading %}C program to perform operations on queue using array of structures{% endblock heading %}
+{% block code %} <code>#include <<x>stdio.h></code> <br>
+            # define MAXIMUM 10<br>
+            struct queue{<br>
+              int q[MAXIMUM];<br>
+              int front , rear;<br>
+              <br>
+            }que;<br>
+            void add()<br>
+            {<br>
+              if (que.rear==(MAXIMUM-1))<br>
+              {<br>
+                printf("QUEUE IS FULL..........\n");<br>
+              }<br>
+              else<br>
+              {<br>
+                que.rear++;<br>
+                  printf("Enter element to enter in a queue : ");<br>
+                  scanf("%d",&que.q[que.rear]);<br>
+                  <br>
+              }<br>
+            <br>
+              <br>
+            }<br>
+            void display()<br>
+            {<br>
+              if (que.front==-1)<br>
+              {<br>
+                printf("\nQUEUE IS EMPTY...........\n");<br>
+              }<br>
+              else<br>
+              {<br>
+              int i;<br>
+              printf("\nQUEUE\n");<br>
+              for(i=que.front;i<=que.rear;i++)<br>
+              {<br>
+                <br>
+                printf("%d\t",que.q[i]);<br>
+              }<br>
+              printf("\n");	<br>
+              }<br>
+              <br>
+            }<br>
+            void del()<br>
+            {<br>
+              if(que.rear==(que.front-1))<br>
+              {<br>
+                printf("QUEUE IS EMPTY , NOTHING TO DELETE\n");<br>
+              }<br>
+              else<br>
+              {<br>
+              printf("\nThe number %d is successfully popped from the queue....\n",que.q[que.front]);<br>
+              que.front++;<br>
+              }<br>
+              <br>
+            }<br>
+            void main()<br>
+            {<br>
+              printf("ROLL NO : 22318\n");<br>
+              que.front=0;<br>
+              que.rear=-1;<br>
+              int choice;<br>
+              int choice1;<br>
+              do<br>
+              {<br>
+                printf("Enter choice :\n 1. ADD ELEMENT \n 2. DELETE ELEMENT \n 3. DISPLAY\n");<br>
+                  scanf("%d",&choice);<br>
+                  switch (choice)<br>
+                  {<br>
+                    case 1:<br>
+                      add();<br>
+                      break;<br>
+                    case 2:<br>
+                      del();<br>
+                      break;<br>
+                    case 3:<br>
+                      display();<br>
+                      break;<br>
+                    default:<br>
+                      printf("INVALID CHOICE......\n");<br>
+                      break;<br>
+                      <br>
+                }<br>
+                  printf("\nPRESS 1 TO CONTINUE.........\n");<br>
+                  scanf("%d",&choice1);<br>
+                  <br>
+              }while (choice1==1);<br>
+              <br>
+            }<br>
+        {% endblock code %}

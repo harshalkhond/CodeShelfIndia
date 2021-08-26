@@ -1,0 +1,30 @@
+{% extends 'base2.html' %}
+{% block heading %}c++ program to perform the concept of class and object{% endblock heading %}
+{% block code %}        //Write a c++ program to perform the concept of class and object<br>
+//Nesting member function.<br>
+# include <iostream><br>
+using namespace std;<br>
+<br>
+class info<br>
+{<br>
+	int num1;<br>
+	int num2;<br>
+	public:<br>
+		void getdata()<br>
+		{<br>
+			cout<<"Enter two integer numbers : ";<br>
+			cin>>num1>>num2;<br>
+			putdata();<br>
+		}<br>
+		void putdata()<br>
+		{<br>
+			cout<<"Entered numbers are : \na="<<num1<<"\n"<<"b="<<num2;<br>
+		}<br>
+};<br>
+int main()<br>
+{<br>
+	info x1;<br>
+	x1.getdata();<br>
+//	x1.putdata();<br>
+	return 0;<br>
+}<br>{% endblock code %}

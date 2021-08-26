@@ -1,0 +1,39 @@
+{% extends 'base2.html' %}
+{% block heading %}cpp program to perform call by address{% endblock heading %}
+{% block code %}//Write a cpp program to perform call by address<br>
+
+      #include <iostream><br>
+      using namespace std;<br>
+      void swapv(int* ,int* );<br>
+      <br>
+      int main()<br>
+      {<br>
+        int a ,b;<br>
+        cout<<"Enter the numbers ";<br>
+        cin>>a>>b;<br>
+        cout<<"\nBefore the swap function \na="<<a<<"\nb="<<b;<br>
+        cout<<"\nBefore the swap function adress of \na="<<&a<<"\nb="<<&b;<br>
+        swapv(&a,&b);<br>
+        cout<<"\nAfter the swap function \na="<<a<<"\nb="<<b;<br>
+        cout<<"\nAfter the swap function adress of \na="<<&a<<"\nb="<<&b;<br>
+      <br>
+        <br>
+      <br>
+        <br>
+        return 0;<br>
+      }<br>
+      void swapv(int *a,int *b)<br>
+      {<br>
+        int temp=*a;<br>
+        *a=*b;<br>
+        *b=temp;<br>
+        cout<<"\nwithin the function \na="<<*a<<"\nb="<<*b;<br>
+        cout<<"\nWithin the swap function adress of \na="<<a<<"\nb="<<b;<br>
+        <br>
+        <br>
+        <br>
+      }<br>{% endblock code %}
+
+        <!-- Block level -->
+        
+   

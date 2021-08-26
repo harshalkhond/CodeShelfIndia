@@ -1,0 +1,14 @@
+{% extends 'base2.html' %}
+{% block heading %}C program to perform operations on strings{% endblock heading %}
+{% block code %}import random<br>
+        n=random.random()<br>
+        print("the guessed number is",(n))<br>
+        #n=4<br>
+        a=input("enter any number")<br>
+        a=int(a)<br>
+        if a==n:<br>
+            print("YOU WIN!!!!")<br>
+        elif a< n:<br>
+            print("OOPS TOO LOW")<br>
+        else:<br>
+            print("TOO HIGH!!!!!")<br>{% endblock code %}<!doctype html>

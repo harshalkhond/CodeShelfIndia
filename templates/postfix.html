@@ -1,0 +1,97 @@
+{% extends 'base2.html' %}
+{% block heading %}C program to evaluate postfix expression{% endblock heading %}
+{% block code %}<code>#include <<x>stdio.h></code> <br>
+        <br>
+        #define MAXIMUM 10<br>
+        struct postfix_stack<br>
+        {<br>
+          int stack_arr[MAXIMUM];<br>
+          int top;<br>
+        }stk;<br>
+        void push(int element)<br>
+        {<br>
+            stk.top+=1;<br>
+            stk.stack_arr[stk.top]=element;    <br>
+        }<br>
+        int length(char str[30])<br>
+        {<br>
+          int i;<br>
+          int len=0;<br>
+          for (i=0;str[i]!='\0';i++)<br>
+          {<br>
+            len++;<br>
+          }<br>
+          return len;<br>
+        }<br>
+        int convert(char s)  <br>
+        {    <br>
+            int num;<br>
+            num=s-48;<br>
+            return num;<br>
+        }  <br>
+        int pop()<br>
+        {<br>
+          int popped_num;<br>
+          if (stk.top==-1)<br>
+              printf("NOTHING TO EVALUATE\n");<br>
+          else<br>
+          {<br>
+              popped_num=stk.stack_arr[stk.top];<br>
+            stk.top-=1;<br>
+          }<br>
+          return popped_num;<br>
+        }<br>
+        void main()<br>
+        {<br>
+          printf("ROLL NO : 22318\n");<br>
+          int i;<br>
+          char post[MAXIMUM];<br>
+          char charr;<br>
+          int num1;<br>
+          int num2;<br>
+          int result;<br>
+          printf("Enter postfix expression : ");<br>
+          gets(post);<br>
+          for (i=0;i<length(post);i++)<br>
+          {<br>
+            charr=post[i];<br>
+            if (charr == '+' || charr == '-' || charr == '*' || charr == '/')<br>
+            {<br>
+              num1=pop();<br>
+              num2=pop();<br>
+              switch (charr)<br>
+                    {<br>
+                    case '+':<br>
+                        result = num2 + num1;<br>
+                        break;<br>
+        <br>
+                    case '-':<br>
+                        result = num2 - num1;<br>
+                        break;<br>
+        <br>
+                    case '/':<br>
+                        result = num2 / num1;<br>
+                        break;<br>
+        <br>
+                    case '*':<br>
+                        result = num2 * num1;<br>
+                        break;<br>
+                    default:<br>
+                      printf("INVALID\n");<br>
+                      break;<br>
+                    }<br>
+                    push(result);<br>
+            }<br>
+            else<br>
+            {<br>
+              num1=convert(post[i]);<br>
+              push(num1);<br>
+            }<br>
+          }<br>
+          printf("\nThe output of the postfix expression is : %d",result);<br>
+          <br>
+        }<br>
+        <br>
+            {% endblock code %}
+
+

@@ -1,0 +1,107 @@
+{% extends 'base2.html' %}
+{% block heading %}C program to perform operations on Queue (using linked list){% endblock heading %}
+{% block code %}<code>#include <<x>stdio.h></code> <br>
+      <code>#include <<x>stdlib.h></code> <br>
+      
+  struct node   <br>
+  {  <br>
+      int data;   <br>
+      struct node *next;  <br>
+  };  <br>
+  struct node *front;  <br>
+  struct node *rear;   <br>
+  void insert()  <br>
+  {  <br>
+      struct node *ptr;  <br>
+      int item;   <br>
+        <br>
+      ptr = (struct node *) malloc (sizeof(struct node));  <br>
+      if(ptr == NULL)  <br>
+      {  <br>
+          printf("\nOVERFLOW\n");  <br>
+          return;  <br>
+      }  <br>
+      else  <br>
+      {   <br>
+          printf("\nEnter value?\n");  <br>
+          scanf("%d",&item);  <br>
+          ptr -> data = item;  <br>
+          if(front == NULL)  <br>
+          {  <br>
+              front = ptr;  <br>
+              rear = ptr;   <br>
+              front -> next = NULL;  <br>
+              rear -> next = NULL;  <br>
+          }  <br>
+          else   <br>
+          {  <br>
+              rear -> next = ptr;  <br>
+              rear = ptr;  <br>
+              rear->next = NULL;  <br>
+          }  <br>
+      }  <br>
+  }    <br>
+  void deleted ()  <br>
+  {  <br>
+      struct node *ptr;  <br>
+      if(front == NULL)  <br>
+      {  <br>
+          printf("\nUNDERFLOW\n");  <br>
+          return;  <br>
+      }  <br>
+      else   <br>
+      {  <br>
+          ptr = front;  <br>
+          front = front -> next;  <br>
+          free(ptr);  <br>
+      }  <br>
+  }  <br>
+  void display()  <br>
+  {  <br>
+      struct node *ptr;  <br>
+      ptr = front;      <br>
+      if(front == NULL)  <br>
+      {  <br>
+          printf("\nEmpty queue\n");  <br>
+      }  <br>
+      else  <br>
+      {   printf("\nprinting values .....\n");  <br>
+          while(ptr != NULL)   <br>
+          {  <br>
+              printf("%d\t",ptr -> data);  <br>
+              ptr = ptr -> next;  <br>
+          }  <br>
+      }  <br>
+  }  	<br>
+  void main ()  <br>
+  {  <br>
+      printf("ROLL NO : 22318\n");<br>
+    int choice;<br>
+    int choice1;<br>
+    do<br>
+    {<br>
+      printf("Enter choice :\n 1. ADD ELEMENT \n 2. DELETE ELEMENT \n 3. DISPLAY\n");<br>
+        scanf("%d",&choice);<br>
+        switch (choice)<br>
+        {<br>
+          case 1:<br>
+            insert();<br>
+            break;<br>
+          case 2:<br>
+            deleted();<br>
+            break;<br>
+          case 3:<br>
+            display();<br>
+            break;<br>
+          default:<br>
+            printf("INVALID CHOICE......\n");<br>
+            break;<br>
+            <br>
+      }<br>
+        printf("\nPRESS 1 TO CONTINUE.........\n");<br>
+        scanf("%d",&choice1);<br>
+        <br>
+    }while (choice1==1);<br>
+  }  <br>
+   <br>
+  <br>      {% endblock code %}

@@ -1,0 +1,80 @@
+{% extends 'base2.html' %}
+{% block heading %}Operator overloading on unary operator using this keyword{% endblock heading %}
+{% block code %} /* Operator overloading on unary operator using this keyword<br>
+        <br>
+        #include <iostream><br>
+        using namespace std;<br>
+        <br>
+        class complex<br>
+        {<br>
+            float real;<br>
+            float img;<br>
+            <br>
+            public:<br>
+                void read();<br>
+                void display();<br>
+                complex operator ++();<br>
+                complex operator --();<br>
+        };<br>
+        int main()<br>
+        {<br>
+            complex c1,c3;<br>
+            int ch;<br>
+            cout<<"Enter first complex number : ";<br>
+            c1.read();<br>
+            c1.display();<br>
+            do<br>
+            {<br>
+               cout<<"\n\nwhich operation you want to perform";<br>
+               cout<<"\n\n1.Increment 2.Decrement : ";<br>
+               int choice;<br>
+              <br>
+               cin>>choice;<br>
+               switch (choice)<br>
+               {<br>
+                   case 1:<br>
+                    c3=++c1;<br>
+                    c3.display();<br>
+                    break;<br>
+                case 2:<br>
+                    c3=--c1;<br>
+                    c3.display();<br>
+                    break;<br>
+                default:<br>
+                    cout<<"\n\nEnter valid choice";<br>
+                   }<br>
+                   cout<<"\n\nPress 1 to continue and 0 to exit : ";<br>
+                   cin>>ch;<br>
+            }while (ch==1);<br>
+            <br>
+            return 0;<br>
+        }<br>
+        <br>
+        void complex::read()<br>
+        {<br>
+            cout<<"\n\nEnter real part of complex number : ";<br>
+            cin>>real;<br>
+            cout<<"\nEnter imaginary part of complex number : ";<br>
+            cin>>img;<br>
+        }<br>
+        void complex::display()<br>
+        {<br>
+            if (img>=0)<br>
+            {<br>
+                cout<<"\n\nThe complex number is : "<<real<<"+"<<img<<"i";<br>
+            }<br>
+            else<br>
+            cout<<"\n\nThe complex number is : "<<real<<img<<"i";<br>
+        }<br>
+        complex complex::operator ++()<br>
+        {<br>
+            ++real;<br>
+            ++img;<br>
+            return (*this);<br>
+        }<br>
+        complex complex::operator --()<br>
+        {<br>
+            --real;<br>
+            --img;<br>
+            return (*this);<br>
+        }<br>{% endblock code %}

@@ -1,0 +1,47 @@
+{% extends 'base2.html' %}
+{% block heading %}program in c++ to implement string class using constructor and destructor{% endblock heading %}
+{% block code %}        /*Write a program in c++ to implement string class , Write constructors , destructors , accept function and display function .<br>
+<br>
+
+<br>
+# include <iostream><br>
+# include <cstring><br>
+using namespace std;<br>
+<br>
+class Mystring<br>
+{<br>
+	char * str;<br>
+	char s1[20];<br>
+	public:<br>
+		Mystring();<br>
+		void accept();<br>
+		void display();<br>
+		~Mystring()<br>
+		{<br>
+			cout<<"\nDestructor is working";<br>
+		}<br>
+};<br>
+<br>
+Mystring::Mystring()<br>
+{<br>
+	str=new char[1];<br>
+	str[0]='\0';<br>
+}<br>
+void Mystring::accept()<br>
+{<br>
+	cout<<"Enter string => ";<br>
+	cin.get(s1,20);<br>
+	strcpy(str,s1);<br>
+}<br>
+void Mystring::display()<br>
+{<br>
+	cout<<"\nstr => "<<str;<br>
+}<br>
+int main()<br>
+{<br>
+	Mystring s;<br>
+	s.accept();<br>
+	s.display();<br>
+	<br>
+}<br>
+{% endblock code %}

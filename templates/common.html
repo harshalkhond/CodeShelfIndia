@@ -1,0 +1,21 @@
+{% extends 'base2.html' %}
+{% block heading %}Python program to find common numbers in two list{% endblock heading %}
+{% block code %}n=int(input("no of elements in list1: "))<br>
+        m=int(input("no of elements in list2: "))<br>
+        l=[]<br>
+        f=[]<br>
+        g=[]<br>
+        for i in range(n):<br>
+            elements1=input()<br>
+            l.append(elements1)<br>
+        print(l)<br>
+        for j in range(m):<br>
+            elements2=input()<br>
+            f.append(elements2)<br>
+        print(f)<br>
+        for k in range(n):<br>
+           for q in range(m):<br>
+               if l[k]==f[q]:<br>
+                   g.append(l[k])<br>
+        print(g)<br>{% endblock code %}
+

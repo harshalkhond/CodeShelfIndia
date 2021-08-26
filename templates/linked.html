@@ -1,0 +1,256 @@
+{% extends 'base2.html' %}
+{% block heading %}C program to perform operations on linked list{% endblock heading %}
+{% block code %}<code>#include <<x>stdio.h></code> <br>
+      <code>#include <<x>stdlib.h></code> <br>
+
+            struct node{<br>
+              int data;<br>
+              struct node *next;<br>
+            };<br>
+            void display(struct node *ptr)<br>
+            {<br>
+              while(ptr!=NULL)<br>
+              {<br>
+              printf("%d\n",ptr->data);<br>
+              ptr=ptr->next;	<br>
+              }<br>
+              <br>
+            }<br>
+            struct node* insert_at_beg(struct node *head,int val)<br>
+            {<br>
+              printf("INSERT FUNC IS CALLED\n");<br>
+              struct node *p;<br>
+              p=(struct node *) malloc(sizeof(struct node));<br>
+              p->data=val;<br>
+              p->next=head;<br>
+              return p;<br>
+              <br>
+            }<br>
+            void insert_at_end(struct node *head,int val)<br>
+            {<br>
+              printf("INSERT FUNC IS CALLED\n");<br>
+              struct node *p;<br>
+              p=(struct node *) malloc(sizeof(struct node));<br>
+              p->data=val;<br>
+              while (head->next!=NULL)<br>
+              {<br>
+                head=head->next;<br>
+              }<br>
+              head->next=p;<br>
+              p->next=NULL;<br>
+              <br>
+              <br>
+            }<br>
+            struct node* insert_at_index(struct node *head,int val,int index)<br>
+            {<br>
+              printf("INSERT FUNC IS CALLED\n");<br>
+              struct node *p;<br>
+              p=(struct node *) malloc(sizeof(struct node));<br>
+              p->data=val;<br>
+              int i=0;<br>
+              while (i!=(index-1))<br>
+              {<br>
+                head=head->next;<br>
+                i++;<br>
+              }<br>
+              p->next=head->next;<br>
+              head->next=p;<br>
+              <br>
+              <br>
+            }<br>
+            struct node* del_at_beg(struct node* ptr)<br>
+            {<br>
+              printf("DELETE FUNC IS CALLED\n");<br>
+              struct node* p=(struct node *) malloc(sizeof(struct node));<br>
+              p=ptr;<br>
+              ptr=ptr->next;<br>
+              free(p);<br>
+              return ptr;<br>
+            }<br>
+            void del_at_end(struct node* ptr)<br>
+            {<br>
+              printf("DELETE FUNC IS CALLED\n");<br>
+              struct node* p=(struct node *) malloc(sizeof(struct node));<br>
+              struct node* q=(struct node *) malloc(sizeof(struct node));<br>
+              p=ptr;<br>
+              q=p->next;<br>
+              while (q->next!=NULL)<br>
+              {<br>
+                p=p->next;<br>
+                q=q->next;<br>
+              }<br>
+              p->next=NULL;<br>
+              free(q);<br>
+              <br>
+              <br>
+            }<br>
+            void del_at_index(struct node* head, int n)<br>
+            {<br>
+              int i;<br>
+              struct node* p=(struct node*) malloc(sizeof(struct node));<br>
+              struct node* q=(struct node*) malloc(sizeof(struct node));<br>
+              p=head;<br>
+              q=p->next;<br>
+              for (i=0;i<n-1;i++)<br>
+              {<br>
+                p=p->next;<br>
+                q=q->next;<br>
+              }<br>
+              p->next=q->next;<br>
+              printf("Data at index %d is deleted\n",n);<br>
+              free(q);<br>
+              <br>
+              <br>
+              <br>
+            }<br>
+            int size(struct node* ptr)<br>
+            {<br>
+              int i;<br>
+              int count=0;<br>
+              while (ptr!=NULL)<br>
+              {<br>
+                ptr=ptr->next;<br>
+                count++;<br>
+              }<br>
+              return count;<br>
+            }<br>
+            void reverse(struct node* head)  <br>
+            {    <br>
+            if (head == NULL)<br>
+            {         <br>
+            return;    <br>
+            }    <br>
+            reverse(head->next);<br>
+            printf("%d ", head->data);<br>
+            printf("\n");<br>
+            }<br>
+            struct node* reverseList(struct node* head)<br>
+            {   struct node *prevNode, *curNode; <br>
+             <br>
+                if(head != NULL)     <br>
+              { <br>
+              prevNode = head;         <br>
+              curNode = head->next;         <br>
+              head = head->next; <br>
+                prevNode->next = NULL; // Make first node as last node <br>
+                while(head != NULL)         <br>
+              {<br>
+              head = head->next;             <br>
+              curNode->next = prevNode; <br>
+             <br>
+                prevNode = curNode;             <br>
+              curNode = head;         <br>
+              } <br>
+             <br>
+                head = prevNode; // Make last node as head <br>
+             <br>
+                printf("SUCCESSFULLY REVERSED LIST\n");         <br>
+              return head;     <br>
+              } <br>
+              } <br>
+            void main()<br>
+            {<br>
+              int choice;<br>
+              int choice1;<br>
+              int location;<br>
+              int value;<br>
+              struct node *head;<br>
+              struct node *second;<br>
+              struct node *third;<br>
+              struct node *fourth;<br>
+              head=(struct node*) malloc(sizeof(struct node));<br>
+              second=(struct node*) malloc(sizeof(struct node));<br>
+              third=(struct node*) malloc(sizeof(struct node));<br>
+              fourth=(struct node*) malloc(sizeof(struct node));<br>
+              <br>
+            //	printf("THIS IS MEMORY ALLOTED TO HEAD VARIABLE WHICH IS USED TO ACCESS STRUCTURE MEMBERS AND NOT TO FULL STRUCT NODE :\n %d\n",head);<br>
+            //	printf("THIS IS MEMORY ALLOTED TO NEXT WHICH IS A STRUCTURE TYPE VARIABLE WHICH STORES THE MEMORY LOCATION OF NEXT NODE:\n %d\n",head->next);<br>
+            //	printf("BUT AS THE MEMORY IS NOT ALLOTED TO SECOND NODE IN THIS CASE IT WILL PRINT GARBAGE VALUE\n");<br>
+            //	head->data=1;<br>
+            <br>
+                printf("\nENTER FIRST ELEMENT IN LINKED LIST\n");<br>
+                scanf("%d",&head->data);<br>
+              head->next=second;<br>
+              <br>
+            //	printf("THIS IS MEMORY ALLOTED TO NEXT WHICH IS A STRUCTURE TYPE VARIABLE WHICH STORES THE MEMORY LOCATION OF NEXT NODE:\n %d\n",head->next);<br>
+            //	printf("AS THE MEMORY IS ALLOTED TO SECOND NODE IN THIS CASE IT WILL PRINT MEMORY LOCATION OF THE SECCOND NODE\n");<br>
+            <br>
+              printf("\nENTER SECOND ELEMENT IN LINKED LIST\n");<br>
+                scanf("%d",&second->data);<br>
+              second->next=third;<br>
+              <br>
+              printf("\nENTER THIRD ELEMENT IN LINKED LIST\n");<br>
+                scanf("%d",&third->data);<br>
+              third->next=fourth;<br>
+              <br>
+              printf("\nENTER FOURTH ELEMENT IN LINKED LIST\n");<br>
+                scanf("%d",&fourth->data);<br>
+              fourth->next=NULL;<br>
+             do  <br>
+             {      <br>
+            printf("Enter which operation you want to perform\n1.Insert\n2.Delete\n3.Display\n4.Reverse Display\n5.Reverse\n");<br>
+            scanf("%d",&choice);<br>
+            switch (choice)     <br>
+            {       <br>
+            case 1:          <br>
+                printf("Enter at which location you want to enter element\n");<br>
+              scanf("%d",&location);         <br>
+              printf("Enter value you want to insert : ");         <br>
+              scanf("%d",&value);          <br>
+              if (location==1)             <br>
+              {            <br>
+                  head=insert_at_beg(head ,value);              <br>
+                display(head);                              <br>
+              }             <br>
+              else if(location==size(head))         <br>
+              {                 <br>
+              insert_at_end(head,value);                 <br>
+              display(head);             <br>
+              }             <br>
+              else             <br>
+              {                <br>
+              insert_at_index(head,value,location-1);                 <br>
+              display(head);<br>
+              }             <br>
+              break;         <br>
+            case 2:             <br>
+                printf("Enter at which location you want to Delete element\n");<br>
+              scanf("%d",&location);             <br>
+              if (location==1)             <br>
+              {                 <br>
+              head=del_at_beg(head);                 <br>
+              display(head);             <br>
+              }             <br>
+              else if(location==size(head))             <br>
+              {                 <br>
+              del_at_end(head);                 <br>
+              display(head);             <br>
+              }             <br>
+              else             <br>
+              {                <br>
+              del_at_index(head,location-1);                 <br>
+              display(head);             <br>
+              }             <br>
+              break;         <br>
+            case 3:              <br>
+                display(head);              <br>
+              break;         <br>
+            case 4:            <br>
+                reverse(head);            <br>
+              break;         <br>
+            case 5:            <br>
+                head=reverseList(head);            <br>
+              display(head);            <br>
+              break;         <br>
+            default:             <br>
+                printf("Invalid choice");             <br>
+              break;              <br>
+              }     <br>
+            printf("Enter 1 to continue and 0 to exit\n");<br>
+            scanf("%d",&choice1);  <br>
+            }while (choice1==1); <br>
+            } <br>
+            <br>
+            <br>      
+                {% endblock code %}
+

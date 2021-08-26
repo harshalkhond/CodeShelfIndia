@@ -1,0 +1,54 @@
+{% extends 'base2.html' %}
+{% block heading %}c++ program to perform the concept of function overloading{% endblock heading %}
+{% block code %}    //Write a c++ program to perform the concept of function overloading<br>
+<br>
+<br>
+#include <iostream><br>
+using namespace std;<br>
+void add(int, int);<br>
+void add(int, float);<br>
+void add(float, float);<br>
+void add(int, int , int);<br>
+int main()<br>
+{<br>
+	int a,b;<br>
+	float d,e;<br>
+	cout<<"\nEnter two integer numbers to add : ";<br>
+    cin>>a>>b;<br>
+    cout<<"\nAddition of two integers is : ";<br>
+    add(a,b);<br>
+    cout<<"\nEnter third number to add : ";<br>
+    int c;<br>
+    cin>>c;<br>
+    cout<<"\nAddition of three integers is : ";<br>
+    add(a,b,c);<br>
+    cout<<"\nEnter two float numbers";<br>
+    cin>>d>>e;<br>
+    cout<<"\nAddition of integer and float is : ";<br>
+    add(a,e);<br>
+    cout<<"\nAddition of two float numbers is : ";<br>
+    add(d,e);<br>
+}<br>
+void add(int a , int b)<br>
+{<br>
+	 cout<<a+b;<br>
+}<br>
+void add(int a, float b)<br>
+{<br>
+	cout<<a+b;<br>
+}<br>
+void add(float a,int b)<br>
+{<br>
+	cout<<a+b;<br>
+}<br>
+void add(float a,float b)<br>
+{<br>
+	cout<<a+b;<br>
+}<br>
+void add(int a ,int b,int c)<br>
+{<br>
+	cout<<a+b+c;<br>
+}<br>
+{% endblock code %}
+
+

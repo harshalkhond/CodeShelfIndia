@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>About CodeShelf</title>
+</head>
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    #myInput {
+        
+      background-image: url('/css/searchicon.png');
+      background-position: 10px 12px;
+      background-repeat: no-repeat;
+      width: 98%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-left:2px;
+      position: relative;
+      border-radius: 10px;
+      
+    }
+    
+    #myUL {
+        
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      width: 98%;
+      margin-left: 1px;
+      margin-top:8px;
+    }
+    
+    #myUL li a {
+      border: 1px solid #ddd;
+      margin-top: -1px; /* Prevent double borders */
+      background-color: #f6f6f6;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      color: black;
+      display: block;
+      border-radius: 10px;
+      margin-bottom: 8px;
+      margin-left:1px;
+    }
+    
+    #myUL li a:hover:not(.header) {
+      background-color: #eee;
+    }
+    </style>
+
+<body style="background-color: darkgrey;">
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'myapp' %}">CodeShelf</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'myapp'%}">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Content
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{% url 'Dsa'%}">Data Structures</a></li>
+                <li><a class="dropdown-item" href="{% url 'python'%}">Python Programming</a></li>
+                <li><a class="dropdown-item" href="{%url 'OOPindex'%}">OOP</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">More coming soon</a></li>
+              </ul>
+            </li> 
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'about'%}">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'contact'%}">Contact us</a>
+            </li>
+            
+            
+          </ul>
+          
+            <!-- <button type="button" class="btn btn-outline-light btn-sm" style="margin-right: 10px;border-radius: 6px;">SignIn</button>
+            <button type="button" class="btn btn-outline-light btn-sm" style="margin-right: 10px; border-radius: 6px;">Login</button> -->
+
+            <a href="{%url 'new'%}"><button class="btn btn-outline-secondary" type="submit" style="width: 150px;background-color: aliceblue;"> Search</button></a>
+          
+        </div>
+      </div>
+    </nav>
+   
+    </div>
+    <h2>Search codes</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Codes.." title="Type in a name">
+
+
+  <ul id="myUL">
+  <li><a href="{% url 'bst' %}">BST</a></li>
+  <li><a href="{% url 'common' %}">common elements in list</a></li>
+  <li><a href="{% url 'stack' %}">stack using array and structures</a></li>
+  <li><a href="{% url 'queuepointer' %}">queue using array of structures</a></li>
+  <li><a href="{% url 'stackpointer' %}">stack using pointer to arrays</a></li>
+  <li><a href="{% url 'queuepointer' %}">Queue using pointer to arrays</a></li>
+  <li><a href="{% url 'linked' %}">Operations on linked list</a></li>
+  <li><a href="{% url 'qlink' %}">queue using linked list-style-type</a></li>
+  <li><a href="{% url 'stacklink' %}">stack using linked list</a></li>
+  <li><a href="{% url 'postfix' %}">evaluate postfix expression</a></li>
+  <li><a href="{% url 'polynomial' %}">Addition of two polynomials</a></li>
+  <li><a href="{% url 'hello' %}">Hello world in python</a></li>
+  <li><a href="{% url 'strpal' %}">String palindrome</a></li>
+  <li><a href="{% url 'oddeven' %}">even or odd numbers</a></li>
+  <li><a href="{% url 'revprint' %}">Reverse list</a></li>
+  <li><a href="{% url 'sum' %}">sum of n natural numbers</a></li>
+  <li><a href="{% url 'random' %}">Random number guessing game</a></li>
+  <li><a href="{% url 'complex_python' %}">operations on complex number</a></li>
+  <li><a href="{% url 'even_sum' %}">sum of forst n even numbers</a></li>
+  <li><a href="{% url 'strongnum' %}">Strong number</a></li>
+  <li><a href="{% url 'pystring' %}">strings in python</a></li>
+  <li><a href="{% url 'pysub' %}">python program for substring</a></li>
+  <li><a href="{% url 'pysum' %}">sum of digits in python</a></li>
+  <li><a href="{% url 'call_address' %}">swap function using call by address</a></li>
+  <li><a href="{% url 'call_ref' %}">swap function using call by reference</a></li>
+  <li><a href="{% url 'classs' %}">Cpp program for classes and objects</a></li>
+  <li><a href="{% url 'compcalc' %}">cpp program to perform operations on complex numbers</a></li>
+  <li><a href="{% url 'defaultcons' %}">program in c++ to implement string class using constructor and destructor</a></li>
+  <li><a href="{% url 'dyna_ini' %}">c++ program for dynamic initialization of variables</a></li>
+  <li><a href="{% url 'func_overload' %}">c++ program for function overloading</a></li>
+  <li><a href="{% url 'inline' %}">c++ program for inline function</a></li>
+  <li><a href="{% url 'multi' %}">c++ program for multiple inheritance</a></li>
+  <li><a href="{% url 'op_comp' %}">c++ program for complex operator poverloading</a></li>
+  <li><a href="{% url 'paramet' %}">c++ program for parametrized constructor</a></li>
+  <li><a href="{% url 'refer_var' %}">c++ program for reference variable demostration</a></li>
+  <li><a href="{% url 'sortingcpp' %}">c++ program for sorting</a></li>
+  <li><a href="{% url 'stack_class' %}">c++ program for stack using classes</a></li>
+  <li><a href="{% url 'swap_val' %}">c++ program for swap by value function</a></li>
+  <li><a href="{% url 'unary' %}">c++ program for unary operator overloading</a>/li>
+</ul>
+
+<script>
+var UL = document.getElementById("myUL");
+// hilde the list by default
+UL.style.display = "none";
+
+var searchBox = document.getElementById("myInput");
+
+// show the list when the input receive focus
+searchBox.addEventListener("focus",  function(){
+    // UL.style.display = "block";
+});
+
+// hide the list when the input receive focus
+searchBox.addEventListener("blur", function(){
+    UL.style.display = "none";
+});
+function myFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    ul = document.getElementById("myUL");
+    filter = input.value.toUpperCase();
+    // if the input is empty hide the list
+    if(filter.trim().length < 1) {
+        ul.style.display = "none";
+        return false;
+    } else {
+        ul.style.display = "block";
+    }
+
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+
+        // This is when you want to find words that contain the search string
+     if (a.innerHTML.toUpperCase().indexOf(filter) > -1) { 
+        li[i].style.display = "";
+     } else {
+        li[i].style.display = "none";
+    } 
+
+    // This is when you want to find words that start the search string
+    /*if (a.innerHTML.toUpperCase().startsWith(filter)) {
+        li[i].style.display = "";
+    } else {
+        li[i].style.display = "none";
+    }*/
+    }
+}
+</script>
+    
+
+
+    <footer class="container">
+        <p class="float-end"><a href="#">Back to top</a></p>
+        <p>© 2017-2020 Company, Inc. · <a href="privacy.html">Privacy</a> · <a href="tandc.html">Terms</a></p>
+    </footer>
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container" style="margin-top:20px; margin-bottom:20px;">
+<form method="post" action="/contact">
+{% csrf_token %}
+  <div class="row mb-3">
+    <label for="name" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="Name" name='name'>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="Password" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="Password" name='password'>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="email" class="col-sm-2 col-form-label">email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="email" name='email'>
+    </div>
+  </div>
+
+ 
+  <button type="submit" class="btn btn-primary">Sign in</button>
+</form></div>{% endblock body %}

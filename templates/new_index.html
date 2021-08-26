@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>CodeShelf</title>
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+    </script>
+  </head>
+  <style>
+    .dark{
+            background-color: #222;
+            color: #e6e6e6;
+        }
+  </style>
+  <body>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">CodeShelf</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Content
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="DSA.html">Data Structures</a></li>
+                <li><a class="dropdown-item" href="python.html">Python Programming</a></li>
+                <li><a class="dropdown-item" href="OOPindex.html">OOP</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">More coming soon</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://forms.gle/CTtQFgyyMM7So4Dw8">Contact us</a>
+            </li>
+            
+            
+          </ul>
+          
+            <!-- <button type="button" class="btn btn-outline-light btn-sm" style="margin-right: 10px;border-radius: 6px;">SignIn</button>
+            <button type="button" class="btn btn-outline-light btn-sm" style="margin-right: 10px; border-radius: 6px;">Login</button> -->
+
+            <a href="new.html"><button class="btn btn-outline-secondary" type="submit" style="width: 150px;background-color: aliceblue; margin-right: 8px;position: relative;"> Search</button></a>
+            <div class="mode" style="margin-top: 4px; ">
+                    LIGHT     
+              <span class="change" style="color: white; margin-right: 30px; margin-left: -45px; margin-top: 20px;">DARK</span>
+          </div>
+            
+        </div>
+      </div>
+    </nav>
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-aos="fade-left" >
+      <ol class="carousel-indicators">
+        <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
+        <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="5000">
+          <img src="1 (1).jpg" class="d-block w-100" alt="" >
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Welcome to CodeShelf</h5>
+            <p>Codes at your fingertips</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <img src="p1.jpg" class="d-block w-100" alt="">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Thousands of code to search from</h5>
+            <p>Get everything you want</p>
+          </div>
+        </div>
+        <div class="carousel-item"  data-bs-interval="5000">
+          <img src="ph1.jpg" class="d-block w-100" alt="">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Electronics solutions coming soon</h5>
+            <p>solutions to most of the elctronics questions</p>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
+    </div>
+<div class="container my-4">
+    <div class="row mb-2" style="border-style: none; margin-left: px; margin-right: 1px;">
+      <div class="col-md-6" data-aos="fade-up" style="border: 1px solid white ; border-radius: 18px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; margin: 15px 15px 25px 10px; max-width: 620px;" >
+        
+        <div class="row g-0  overflow-hidden flex-md-row mb-4  h-md-250 position-relative" style="margin-top: 20px; margin: bottom 20px; min-width: none;">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary">Placements</strong>
+            <h3 class="mb-0">Data structures</h3>
+            <div class="mb-1 text-muted">june 13</div>
+            <p class="card-text mb-auto">Get the programs of all data structures related stuff and prepare for your Placements....</p>
+            <a href="Dsa.html" class="stretched-link">Continue reading</a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img src="44.png" alt="" class="bd-placeholder-img" width="200" height="250">
+  
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" style="border: 1px solid white ; border-radius: 18px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; margin: 15px 15px 25px 10px; max-width: 620px;" >
+        <div class="row g-0 overflow-hidden flex-md-row mb-4 h-md-250 position-relative" style="margin-top: 20px; min-width: none;">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-success">Programming</strong>
+            <h3 class="mb-0">Python Programming</h3>
+            <div class="mb-1 text-muted">june 8</div>
+            <p class="mb-auto">Learn the complex codes of python programming easily at a click.....</p>
+            <a href="python.html" class="stretched-link">Continue reading</a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img src="111.jpeg" alt="" class="bd-placeholder-img" width="200" height="250">
+  
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" style="border: 1px solid white ; border-radius: 18px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; margin: 15px 15px 25px 10px; max-width: 620px;" >
+        <div class="row g-0 overflow-hidden flex-md-row mb-4 h-md-250 position-relative" style="margin-top: 20px;">
+          <div class="col p-4 d-flex flex-column position-static" >
+            <strong class="d-inline-block mb-2 text-success">Programming</strong>
+            <h3 class="mb-0">Object oriented programming</h3>
+            <div class="mb-1 text-muted">june 17</div>
+            <p class="mb-auto">Learn the concepts of OOP through codes easily at a click.....</p>
+            <a href="OOPindex.html" class="stretched-link">Continue reading</a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img src="oopim.jpg" alt="" class="bd-placeholder-img" width="200" height="250">
+  
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-up" style="border: 1px solid white ; border-radius: 18px; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; margin: 15px 15px 25px 10px; max-width: 620px;" >
+        <div class="row g-0 overflow-hidden flex-md-row mb-4 h-md-250 position-relative" style="margin-top: 20px;">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-success">Programming</strong>
+            <h3 class="mb-0">More coming soon</h3>
+            <div class="mb-1 text-muted">june 17</div>
+            <p class="mb-auto">Make your concepts clear with us....</p>
+            <a href="OOPindex.html" class="stretched-link">Continue reading</a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img src="moreim.jpg" alt="" class="bd-placeholder-img" width="200" height="250">
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row my-4" style="background-color: black; color: white; padding: 15px;"> 
+ <!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text></svg>
+  
+          <h2>programs</h2>
+          <p><li style="margin-bottom: 10px; "><a href="bst.html" style="text-decoration: none;color: aliceblue;">BST</a></li>
+            <li style="margin-bottom: 10px;"><a href="common.html" style="text-decoration: none;color: aliceblue;">common elements in list</a></li>
+            <li style="margin-bottom: 10px;"><a href="stack.html" style="text-decoration: none;color: aliceblue;">stack using array and structures</a></li>
+            <li style="margin-bottom: 10px;"><a href="queuepointer.html" style="text-decoration: none;color: aliceblue;">queue using array of structures</a></li>
+            <li style="margin-bottom: 10px;"><a href="stackpointer.html" style="text-decoration: none;color: aliceblue;">stack using pointer to arrays</a></li>
+            <li style="margin-bottom: 10px;"><a href="linked.html" style="text-decoration: none;color: aliceblue;">Operations on linked list</a></li>
+  <li style="margin-bottom: 10px;"><a href="qlink.html" style="text-decoration: none;color: aliceblue;">queue using linked list-style-type</a></li>
+  
+
+</p>
+          <p><a class="btn btn-secondary" href="new.html" role="button">View details »</a></p>
+        </div>
+        <div class="col-lg-4">
+          <title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em"></text>
+  
+          <h2>CODESHELF</h2>
+          <P><li style="margin-bottom: 10px;"><a href="index.html" style="text-decoration: none;color: aliceblue;">Home</a></li>
+          <li style="margin-bottom: 10px; "><a href="Dsa.html" style="text-decoration: none;color: aliceblue;">Data structures</a></li>
+          <li style="margin-bottom: 10px; "><a href="about.html" style="text-decoration: none;color: aliceblue;">About us</a></li>
+          <!-- <li style="margin-bottom: 10px; "><a href="query.html" style="text-decoration: none;color: aliceblue;">Queries</a></li> -->
+        </P>
+          <p><a class="btn btn-secondary" href="https://forms.gle/cqYsMnUHrChsfeZA6" role="button">Contact us »</a></p>
+        </div>
+        
+          <div class="col-lg-4">
+            <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false" ><image xlink="newim.jpg
+              "/><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> -->
+    
+            <h2>CREATED BY</h2>
+            <h4>Harshal Khond</h4>
+            <p>Student at PICT,PUNE</p>
+            <p><a href="https://github.com/harshalkhond" role="button"><img src="9919.png" style="height: 45px; width: 45px;"></a>
+            <a href="https://www.instagram.com/harshalkhond/" role="button"><img src="monochrome_large.png" style="height: 45px; width: 45px; margin: 8px;"></a></p>
+          </div>
+      </div>
+
+
+  <footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>© 16/2021 <a href="privacy.html">Privacy</a> · <a href="tandc.html">Terms</a></p>
+  </footer>
+  
+    
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init()</script>
+    <script>
+      $( ".change" ).on("click", function() {
+          if( $( "body" ).hasClass( "dark" )) {
+              $( "body" ).removeClass( "dark" );
+              $( ".change" ).text( "DARK" );
+          } else {
+              $( "body" ).addClass( "dark" );
+              $( ".change" ).text( "LIGHT" );
+          }
+      });
+  </script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{% extends 'base2.html' %}
+{% block heading %}c++ program to declare the dynamic variable allocation{% endblock heading %}
+{% block code %}//Write a c++ program to declare the dynamic variable allocation<br>
+  
+      #include <iostream><br>
+      using namespace std;<br>
+      int main()<br>
+      {<br>
+        int a,b;<br>
+        cout<<"Enter two numbers ";<br>
+        cin>>a>>b;<br>
+        cout<<"Entered numbers are "<<a<<","<<b;<br>
+        cout<<"\n----------------------------------";<br>
+        int add=a+b;       //Dynamic variable initialization<br>
+        cout<<"\nAddition : "<<add;<br>
+        return 0;<br>
+      }<br>
+        <br>{% endblock code %}
+

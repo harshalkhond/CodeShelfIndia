@@ -1,0 +1,73 @@
+{% extends 'base2.html' %}
+{% block heading %}cpp program to perform operations on complex numbers Add ,Subtract,Multiply,Divide{% endblock heading %}
+{% block code %}/*Write a program in c++ to implement string class , Write constructors , destructors , accept function and display function .<br>
+        <br>
+        Name:Harshal Ganesh Khond    class:SE7    Roll no : 22318    Division:E7    DOP:20/05/2021*/<br>
+        <br>
+        # include <iostream><br>
+        # include <cstring><br>
+        using namespace std;<br>
+        <br>
+        class Mystring<br>
+        {<br>
+            char * str;<br>
+            char s1[20];<br>
+            public:<br>
+                Mystring();<br>
+                Mystring(char *val);<br>
+                Mystring(const Mystring &);<br>
+                void accept();<br>
+                void display();<br>
+                ~Mystring()<br>
+                {<br>
+                    cout<<"\nDestructor is working";<br>
+                }<br>
+        };<br>
+        <br>
+        Mystring::Mystring()<br>
+        {<br>
+            str=new char[1];<br>
+            str[0]='\0';<br>
+        }<br>
+        Mystring::Mystring(char *val)<br>
+        {<br>
+            if (val==NULL)<br>
+            {<br>
+                str=new char[1];<br>
+                str[0]='\0';<br>
+            }<br>
+            else <br>
+            {<br>
+                str=new char[strlen(val)+1];<br>
+                strcpy(str,val);<br>
+            }<br>
+        }<br>
+        Mystring::Mystring(const Mystring & sample)<br>
+        {<br>
+            str=new char[strlen(sample.str)+1];<br>
+            strcpy(str,sample.str);<br>
+        }<br>
+        void Mystring::accept()<br>
+        {<br>
+            cout<<"Enter string => ";<br>
+            cin.get(s1,20);<br>
+            strcpy(str,s1);<br>
+        }<br>
+        void Mystring::display()<br>
+        {<br>
+            cout<<"\nstr => "<<str;<br>
+        }<br>
+        int main()<br>
+        {<br>
+            Mystring s;<br>
+            s.accept();<br>
+            s.display();<br>
+            char temp[]="Rahul";<br>
+            Mystring s1(temp);<br>
+            s1.display();<br>
+            Mystring s2(s1);<br>
+            s2.display();<br>
+            return 0;<br>
+        }<br>{% endblock code %}
+
+

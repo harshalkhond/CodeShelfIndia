@@ -1,0 +1,65 @@
+{% extends 'base2.html' %}
+{% block heading %}Python program for strings{% endblock heading %}
+{% block code %}def upper_case(new_str):<br>
+    new_str=input("Enter string : ")<br>
+    print("What you want to do\n1.Capitalise each letter\n2.Convert lower case to uppper case and vice versa")<br>
+    n=int(input("Enter choice : "))<br>
+    ch=""<br>
+    if (n==1):<br>
+        new_str=new_str.upper()<br>
+        print("String in upper case is ",new_str)<br>
+    else:<br>
+        for i in new_str:<br>
+            if (i.islower()):<br>
+                i=i.upper()<br>
+                ch+=i<br>
+            elif (i.isupper()):<br>
+                i=i.lower()<br>
+                ch+=i<br>
+<br>
+    print("After conversion string is : ",ch)<br>
+def reverse(s):<br>
+    str = "" <br>
+    for i in s: <br>
+        str = i + str<br>
+    return str<br>
+def is_sub(s):<br>
+    sub=input("Enter substring : ")<br>
+    if sub in s:<br>
+        return 1<br>
+    return 0<br>
+ch=1<br>
+while ch==1:<br>
+    print("*******************************************************")<br>
+    print("************************MENUBAR************************")<br>
+    print("Enter choice\n1.Create\n2.Reverse\n3.Palindrome\n4.Substring\n5.Compare\n6.Upper case lower case conversions of strings")<br>
+    choice=int(input("Enter choice : "))<br>
+<br>
+    if choice==1:<br>
+        string=input("Enter string :")<br>
+    elif (choice==2):<br>
+        rev_str=reverse(string)<br>
+        print("Reversed string is : ",rev_str)<br>
+    elif (choice==3):<br>
+        if (reverse(string)==string):<br>
+            print("String is palindrome")<br>
+        else:<br>
+            print("String is not palindrome")<br>
+    elif (choice==4):<br>
+        if (is_sub(string)):<br>
+            print("Substring present")<br>
+        else:<br>
+            print("Substring not present")<br>
+    elif (choice==5):<br>
+        if (input("Enter string to compare : ")==string):<br>
+            print("Strings are equal")<br>
+        else:<br>
+            print("Strings are not equal")<br>
+    elif (choice==6):<br>
+        upper_case(input("Enter String"))<br>
+    <br>
+        <br>
+    else:<br>
+        print("OOP'S INAVLID CHOICE")<br>
+    ch=int(input("Press 1 to continue and 0 to exit"))<br>
+        {% endblock code %}

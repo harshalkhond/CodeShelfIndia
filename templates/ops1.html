@@ -1,0 +1,162 @@
+{% extends 'base2.html' %}
+{% block heading %}C program to perform operations on strings{% endblock heading %}
+{% block code %}<code>#include <<x>stdio.h></code> <br>
+                int length(char str[30])<br>
+                {<br>
+                    int i;
+                    int len=0;<br>
+                    for (i=0;str[i]!='\0';i++)<br>
+                    {<br>
+                        len++;<br>
+                    }<br>
+                    return len;<br>
+                }<br>
+                void compare(char str[30])<br>
+                {<br>
+                    char arr[30];<br>
+                    int i;<br>
+                    printf("\nEnter string to compare : ");<br>
+                    getchar();<br>
+                    gets(arr);<br>
+                    if (length(str)!=length(arr))<br>
+                    {<br>
+                        printf("\nGiven strings are not equal\n");<br>
+                    }<br>
+                    else<br>
+                    {<br>
+                        for (i=0;i<length(str);i++)<br>
+                        {<br>
+                            if (str[i]!=arr[i])<br>
+                            {<br>
+                                printf("string is not equal\n");<br>
+                                break;<br>
+                            }<br>
+                        }<br>
+                    }<br>
+                    if(i==length(str))<br>
+                    {<br>
+                        printf("Equal\n");<br>
+                    }<br>
+                
+                }<br>
+                void is_palindrome(char str[30])<br>
+                {<br>
+                    char arr[30];<br>
+                    int i;<br>
+                    for(i=0;i<length(str);i++)<br>
+                    {<br>
+                        arr[i]=str[i];<br>
+                    }<br>
+                    for(i=0;i<length(arr);i++)<br>
+                    {<br>
+                        if(str[i]!=arr[length(arr)-i-1])<br>
+                            {<br>
+                                printf("strings are not palindrome\n");<br>
+                                break;<br>
+                            }<br>
+                    }<br>
+                    if(i==length(str))<br>
+                    {<br>
+                        printf("palindrome\n");<br>
+                    }<br>
+                }<br>
+                void copy(char str[30])<br>
+                {
+                    int i;<br>
+                    char arr[30];<br>
+                    for (i=0;i<length(str);i++)<br>
+                    {<br>
+                        arr[i]=str[i];<br>
+                    }<br>
+                    printf("\nCOPIED STRING IS:\n");<br>
+                    for (i=0;i<length(str);i++)<br>
+                    {<br>
+                        printf("%c\t",str[i]);<br>
+                    }<br>
+                }<br>
+                void substring(char str[30])<br>
+                {<br>
+                    char search[10];<br>
+                    int i, j, flag;<br>
+                    printf("Enter search substring:\n");<br>
+                    getchar();<br>
+                    gets(search);<br>
+                    
+                    for (i = 0; i <= length(str) - length(search); i++)<br>
+                    {<br>
+                        for (j = i; j < i + length(search); j++)<br>
+                        {<br>
+                            flag = 1;<br>
+                            if (str[j] != search[j - i])<br>
+                            {<br>
+                                flag = 0;<br>
+                                break;<br>
+                            }<br>
+                        }<br>
+                        if (flag == 1)<br>
+                            break;<br>
+                    }<br>
+                    if (flag == 1)<br>
+                        printf("SUBSTRING FOUND!");<br>
+                    else<br>
+                        printf("SUBSTRING NOT FOUND!");<br>
+                
+                }<br>
+                void reverse(char str[30])<br>
+                {<br>
+                    char arr[30];<br>
+                    int i;<br>
+                    for (i=0;i<length(str);i++)<br>
+                    {<br>
+                        arr[i]=str[length(str)-i-1];<br>
+                    }<br>
+                
+                    printf("REVERSE STRING IS\n");<br>
+                    printf("%s",arr);<br>
+                
+                }<br>
+                void main()<br>
+                {<br>
+                    printf("ROLL NO 22318\n");<br>
+                    char string[30];<br>
+                    int i;<br>
+                    int choice;<br>
+                    int choice1;<br>
+                    printf("Enter string : ");<br>
+                    gets(string);<br>
+                    
+                    
+                    do<br>
+                    {<br>
+                    printf("\n1.COPY\n2.PALINDROME CHECK\n3.COMPARE\n4.SUBSTRING CHECK\n5.REVERSE STRING\n");<br>
+                    printf("ENTER CHOICE\n");<br>
+                    scanf("%d",&choice);<br>
+                    
+                    switch (choice)<br>
+                    {<br>
+                        case 1:<br>
+                            copy(string);<br>
+                            break;<br>
+                        case 2:<br>
+                            is_palindrome(string);<br>
+                            break;<br>
+                        case 3:<br>
+                            compare(string);<br>
+                            break;<br>
+                        case 4:<br>
+                            substring(string);<br>
+                            break;<br>
+                        case 5:<br>
+                            reverse(string);<br>
+                            break;<br>
+                        default:<br>
+                            printf("\nINVALID CHOICE");<br>
+                            break;<br>
+                    }
+                    printf("\nPress 1 to continue.....\nPress 0 to exit\n");<br>
+                    scanf("%d",&choice1);<br>
+                }while(choice1==1);<br>
+                }<br>
+                {% endblock code %}
+
+

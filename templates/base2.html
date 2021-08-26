@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="container" style="position: relative;left: 0px;max-width: 600px; background-color: black;color: white; border-radius: 15px;margin-top: 15px; padding: 20px;">
+        <h2 style="margin: 15px;margin-top: 20px;">{% block heading %}{% endblock heading %}</h2>
+        <!-- Block level -->
+
+        <p>
+            {% block code %}{% endblock code %}
+
+        </p>
+    </div>
+{% endblock body %}
+
+

@@ -1,0 +1,17 @@
+{% extends 'base2.html' %}
+{% block heading %}Python program for strong number{% endblock heading %}
+{% block code %}  def is_armstrong(s):<br>
+    sum_cube=0<br>
+    for i in s:<br>
+        sum_cube+=(int(i))**3<br>
+    print(sum_cube)<br>
+    if (int(s)==sum):<br>
+        return 1<br>
+    else:<br>
+        return 0<br>
+<br>
+n=int(input("Lower range"))<br>
+p=int(input("Upper range"))<br>
+for i in range (n,p):<br>
+    if (is_armstrong(str(i))):<br>
+        print(i)<br>{% endblock code %}

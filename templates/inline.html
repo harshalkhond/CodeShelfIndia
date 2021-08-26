@@ -1,0 +1,21 @@
+{% extends 'base2.html' %}
+{% block heading %}cpp program for inline functions{% endblock heading %}
+{% block code %}
+            #include <iostream><br>
+            using namespace std;<br>
+            <br>
+            inline int add(int a,int b)<br>
+            {<br>
+                return (a+b);<br>
+            }<br>
+            int main()<br>
+            {<br>
+                int a, b;<br>
+                cout<<"Enter numbers\n";<br>
+                cin>>a>>b;<br>
+                int sum=add(a,b);<br>
+                cout<<"The sum is : "<<sum;<br>
+                return 0;<br>
+            }<br>
+            <br>{% endblock code %}
+

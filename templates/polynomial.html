@@ -1,0 +1,109 @@
+{% extends 'base2.html' %}
+{% block heading %}C program to add two polynomials{% endblock heading %}
+{% block code %}<code>#include <<x>stdio.h></code> <br>
+      
+            struct link{<br>
+                   int coeff;<br>
+                   int pow;<br>
+                   struct link *next;<br>
+                   };<br>
+            struct link *poly1=NULL,*poly2=NULL,*poly=NULL;<br>
+            void create(struct link *node)<br>
+            {<br>
+             char ch;<br>
+             do<br>
+             {<br>
+              printf("\n enter coeff:");<br>
+              scanf("%d",&node->coeff);<br>
+              printf("\n enter power:");<br>
+              scanf("%d",&node->pow);<br>
+              node->next=(struct link*)malloc(sizeof(struct link));<br>
+              node=node->next;<br>
+              node->next=NULL;<br>
+              printf("\n continue(y/n):");<br>
+              ch=getch();<br>
+             }<br>
+             while(ch=='y' || ch=='Y');<br>
+            }<br>
+            void show(struct link *node)<br>
+            {<br>
+             while(node->next!=NULL)<br>
+             {<br>
+              printf("%dx^%d",node->coeff,node->pow);<br>
+              node=node->next;<br>
+              if(node->next!=NULL)<br>
+               printf("+");<br>
+             }<br>
+            }<br>
+            void polyadd(struct link *poly1,struct link *poly2,struct link *poly)<br>
+            {<br>
+                 while(poly1->next &&  poly2->next)<br>
+                 {<br>
+                  if(poly1->pow>poly2->pow)<br>
+                  {<br>
+                   poly->pow=poly1->pow;<br>
+                   poly->coeff=poly1->coeff;<br>
+                   poly1=poly1->next;<br>
+                   }<br>
+                  else if(poly1->pow<poly2->pow)<br>
+                  {<br>
+                   poly->pow=poly2->pow;<br>
+                   poly->coeff=poly2->coeff;<br>
+                   poly2=poly2->next;<br>
+                   }<br>
+                  else<br>
+                  {<br>
+                   poly->pow=poly1->pow;<br>
+                   poly->coeff=poly1->coeff+poly2->coeff;<br>
+                   poly1=poly1->next;<br>
+                   poly2=poly2->next;<br>
+                   }<br>
+                  poly->next=(struct link *)malloc(sizeof(struct link));<br>
+                  poly=poly->next;<br>
+                  poly->next=NULL;<br>
+                 }<br>
+                 while(poly1->next || poly2->next)<br>
+                 {<br>
+                  if(poly1->next)<br>
+                  {<br>
+                   poly->pow=poly1->pow;<br>
+                   poly->coeff=poly1->coeff;<br>
+                   poly1=poly1->next;<br>
+                   }<br>
+                  if(poly2->next)<br>
+                  {<br>
+                   poly->pow=poly2->pow;<br>
+                   poly->coeff=poly2->coeff;<br>
+                   poly2=poly2->next;<br>
+                   }<br>
+                   poly->next=(struct link *)malloc(sizeof(struct link));<br>
+                   poly=poly->next;<br>
+                   poly->next=NULL;<br>
+                   }<br>
+            }<br>
+            main()<br>
+            {<br>
+              printf("ROLL NO :22318");<br>
+                  char ch;<br>
+                  do{<br>
+                  poly1=(struct link *)malloc(sizeof(struct link));<br>
+                  poly2=(struct link *)malloc(sizeof(struct link));<br>
+                  poly=(struct link *)malloc(sizeof(struct link));<br>
+                  printf("\nenter 1st number:");<br>
+                  create(poly1);<br>
+                  printf("\nenter 2nd number:");<br>
+                  create(poly2);<br>
+                  printf("\n1st Number:");<br>
+                  show(poly1);<br>
+                  printf("\n2nd Number:");<br>
+                  show(poly2);<br>
+                  polyadd(poly1,poly2,poly);<br>
+                  printf("\nAdded polynomial:");<br>
+                  show(poly);<br>
+                  printf("\n add two more numbers:");<br>
+                  ch=getch();<br>
+                  }<br>
+                  while(ch=='y' || ch=='Y');<br>
+            }<br>{% endblock code %}
+
+

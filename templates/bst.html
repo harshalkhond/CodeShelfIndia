@@ -1,0 +1,159 @@
+{% extends 'base2.html' %}
+        {% block heading %}C program to perform operations on strings{% endblock heading %}
+        <!-- Block level -->
+
+       {% block code %}
+            <code>#include <<x>stdio.h></code> <br>
+            <code>#include <<x>stdlib.h></code> <br>
+            typedef struct BSTnode <br>
+            { int data;<br>
+            struct BSTnode *left,*right; <br>
+            }BSTnode; <br>
+            BSTnode *insert(BSTnode *,int );<br>
+            BSTnode *find(BSTnode *,int ); <br>
+            BSTnode *create(); <br>
+            void inorder(BSTnode *T); <br>
+            void preorder(BSTnode *T); <br>
+            void postorder(BSTnode *T); <br>
+            void main() <br>
+            { BSTnode *root=NULL,*p;<br>
+            int x,ch,y; <br>
+            do <br>
+            {<br>
+            printf("\n 1.create \n 2.search \n 3.insert \n 4.inorder \n 5.preorder \n 6.postorder");<br>
+            printf("\n Enter ur choice");<br>
+            scanf("%d",&ch); <br>
+            switch(ch)<br>
+            { <br>
+            case 1:<br>
+            root=create(); <br>
+            break; <br>
+            case 2: <br>
+            printf("\n Enter the key to be searched :");<br>
+            scanf("%d",&x); <br>
+            p=find(root,x); <br>
+            if(p==NULL) <br>
+            { <br>
+            printf("\n not found"); <br>
+            } <br>
+            else <br>
+            { <br>
+            printf("\n found"); <br>
+            } <br>
+            break; <br>
+            case 3: <br>
+            printf("\n Enter data to be inserted :");<br>
+            scanf("%d",&x); <br>
+            root=insert(root,x); <br>
+            break; <br>
+            case 4: <br>
+            inorder(root); <br>
+            break; <br>
+            case 5: <br>
+            preorder(root); <br>
+            break; <br>
+            case 6: <br>
+            postorder(root);<br>
+            break; <br>
+            } <br>
+            printf("\n press 1 to continue");<br>
+            scanf("%d",&y); <br>
+            }while(y==1); <br>
+            }<br>
+            void inorder(BSTnode *T)<br>
+            { <br>
+            if(T!=NULL) <br>
+            { <br>
+            inorder(T->left);<br>
+            printf("%d \t",T->data);<br>
+            inorder(T->right); <br>
+            } <br>
+            } <br>
+            void preorder(BSTnode *T)<br>
+            { <br>
+            if(T!=NULL) <br>
+            { <br>
+            printf("%d \t",T->data);<br>
+            preorder(T->left); <br>
+            preorder(T->right); <br>
+            }<br>
+            }<br>
+            void postorder(BSTnode *T)<br>
+            { if(T!=NULL) <br>
+            { <br>
+            postorder(T->left);<br>
+            postorder(T->right);<br>
+            printf("%d \t",T->data);<br>
+            } <br>
+            } <br>
+            BSTnode *create() <br>
+            { <br>
+            int n,x,i;<br>
+            BSTnode *root;<br>
+            root=NULL;<br>
+            printf("\nEnter no of nodes");<br>
+            scanf("%d",&n);<br>
+            printf("\n Enter tree values :");<br>
+            for(i=0;i<n;i++)<br>
+                { <br>
+                scanf("%d",&x);<br>
+                root=insert(root,x);<br>
+                } <br>
+                return(root);<br>
+                } <br>
+                BSTnode *insert(BSTnode *T,int x)<br>
+                { <br>
+                BSTnode *p,*q,*r;<br>
+                r=(BSTnode*)malloc(sizeof(BSTnode));<br>
+                r->data=x;<br>
+                r->left=NULL;<br>
+                r->right=NULL; <br>
+                if(T==NULL) <br>
+                { <br>
+                return(r); <br>
+                } <br>
+                p=T; <br>
+                while(p!=NULL) <br>
+                { <br>
+                q=p; <br>
+                if(x>=p->data)<br>
+                {<br>
+                p=p->right;<br>
+                } <br>
+                else <br>
+                { <br>
+                p=p->left; <br>
+                <br>
+                } <br>
+                } <br>
+                if(x>=q->data) <br>
+                { <br>
+                q->right=r;<br>
+                } <br>
+                else <br>
+                { <br>
+                q->left=r; <br>
+                } <br>
+                return(T); <br>
+                } <br>
+                BSTnode *find(BSTnode *root,int x) <br>
+                { while(root!=NULL) <br>
+                { if(x==root->data) <br>
+                { return(root); <br>
+                } <br>
+                else if(x>root->data) <br>
+                { <br>
+                root=root->right; <br>
+                } <br>
+                else <br>
+                { <br>
+                root=root->left; <br>
+                } <br>
+                } <br>
+                return(NULL); <br>
+                } <br>
+                <br>
+                <br>
+
+
+     {% endblock code %}

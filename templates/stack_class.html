@@ -1,0 +1,101 @@
+{% extends 'base2.html' %}
+{% block heading %}cpp program for stack using classes and objects{% endblock heading %}
+{% block code %} /*Write a c++ program to implement stack . Design the class for stack and the operations to be performed <br>
+on stack . Use constructors and destructors. The objective of this assignment is to learn the concepts class <br>
+and objects , constructors and destructors.*/<br>
+<br>
+
+<br>
+<br>
+# include <iostream><br>
+# define max 10<br>
+using namespace std;<br>
+class stack<br>
+{<br>
+	int s[max];<br>
+	int top;<br>
+	public:<br>
+		stack(int x=-1)<br>
+		{<br>
+			top=x;<br>
+		}<br>
+		void push(int x)<br>
+		{<br>
+			top++;<br>
+			s[top]=x;<br>
+		}<br>
+		int pop()<br>
+		{<br>
+			int num=s[top];<br>
+			top--;<br>
+			return num;<br>
+		}<br>
+		int is_full()<br>
+		{<br>
+			if (top==max-1)<br>
+			return 1;<br>
+			else<br>
+			return 0;<br>
+		}<br>
+		int is_empty()<br>
+		{<br>
+			if (top==-1)<br>
+			return 1;<br>
+			else<br>
+			return 0;<br>
+		}<br>
+		void display()<br>
+		{<br>
+			cout<<"\nPrinting Stack Elements\n\n";<br>
+			for (int i=0;i<=top;i++)<br>
+			{<br>
+				cout<<s[i]<<"	";<br>
+			}<br>
+			cout<<"\n";<br>
+		}<br>
+		~stack()<br>
+		{<br>
+		}<br>
+};<br>
+int main()<br>
+{<br>
+	stack s1;<br>
+	int choice,ch;<br>
+	do<br>
+	{<br>
+	cout<<"\nEnter the operation you want to perform on stack\n1.Push\n2.Pop\n3.Display\n";<br>
+	cin>>choice;<br>
+	switch (choice)<br>
+	{<br>
+		case 1:<br>
+			if (!s1.is_full())<br>
+			{<br>
+				int num;<br>
+				cout<<"\nEnter number to push in stack : ";<br>
+			    cin>>num;<br>
+			    s1.push(num);<br>
+			}<br>
+			else<br>
+			cout<<"\nStack overflow";<br>
+			break;<br>
+		case 2:<br>
+			if (!s1.is_empty())<br>
+			cout<<"\nElement popped is : "<<s1.pop();<br>
+			else<br>
+			cout<<"\nStack underflow";<br>
+			break;<br>
+		case 3:<br>
+			s1.display();<br>
+			break;<br>
+		default:<br>
+			cout<<"\nInvalid choice";<br>
+			break;<br>
+		}<br>
+		cout<<"\nPress 1 to continue and 0 to exit : ";<br>
+		cin>>ch;<br>
+	}while (ch==1);<br>
+			<br>
+			<br>
+	<br>
+	return 0;<br>
+}<br>{% endblock code %}

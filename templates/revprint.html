@@ -1,0 +1,16 @@
+{% extends 'base2.html' %}
+{% block heading %}print reversed list using python{% endblock heading %}
+{% block code %}n=int(input("enter no of elements in the list: "))<br>
+        l=[]<br>
+        m=[]<br>
+        def lst():<br>
+            for i in range(n):<br>
+                enter_numbers=input()<br>
+                l.append(enter_numbers)<br>
+            print("your list",l)<br>
+            for j in range (n-1,-1,-1):<br>
+                m.append(l[j])<br>
+            print("reverse list",m)<br>
+        #print(l[::-1]) is another way<br>
+        <br>
+        lst()<br>{% endblock code %}

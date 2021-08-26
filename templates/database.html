@@ -1,0 +1,146 @@
+{% extends 'base2.html' %}
+{% block heading %}C program to create and implement database{% endblock heading %}
+{% block code %}<code>#include <<x>stdio.h></code> <br>
+            # define MAX_SIZE 10<br>
+            struct comp_data<br>
+            {<br>
+                char comp_name[30];<br>
+                int value;<br>
+                float cost;<br>
+                <br>
+            }s[MAX_SIZE];<br>
+            void display(struct comp_data arr[],int n)<br>
+            {<br>
+                int i;<br>
+                for (i=0;i<n;i++)<br>
+                {<br>
+                    printf("%s\t",arr[i].comp_name);<br>
+                    printf("%d\t",arr[i].value);<br>
+                    printf("%f\t",arr[i].cost);<br>
+                    printf("\n");<br>
+                }<br>
+            }<br>
+            void create(struct comp_data arr[],int n)<br>
+            {<br>
+                int i;<br>
+                for (i=0;i<n;i++)<br>
+                {<br>
+                    printf("\nenter %d name : ",i+1);<br>
+                    <br>
+                    scanf("%s",&arr[i].comp_name);<br>
+                    printf("\nenter %d value : ",i+1);<br>
+                    scanf("%d",&arr[i].value);<br>
+                    printf("\nenter %d cost : ",i+1);<br>
+                    scanf("%f",&arr[i].cost);<br>
+                }<br>
+            }<br>
+            int append(struct comp_data arr[],int n)<br>
+            {<br>
+                printf("Enter data to add\n");<br>
+                printf("\nenter %d component name: ",n+1);<br>
+                scanf("%s",&arr[n].comp_name);<br>
+                printf("\nenter %d component value: ",n+1);<br>
+                scanf("%d",&arr[n].value);<br>
+                printf("\nenter %d component cost : ",n+1);<br>
+                scanf("%f",&arr[n].cost);<br>
+                n+=1;<br>
+                return n;<br>
+            }<br>
+            void modify(struct comp_data arr[],int n)<br>
+            {<br>
+                int location;<br>
+                printf("Enter location at which you want to modify element\n");<br>
+                scanf("%d",&location);<br>
+                if (location>n)<br>
+                {<br>
+                    printf("Modification not possible\n");<br>
+                }<br>
+                else<br>
+                {<br>
+                    printf("Enter data to add\n");<br>
+                    printf("\nenter %d name : ",location);<br>
+                    scanf("%s",&arr[location-1].comp_name);<br>
+                    printf("\nenter %d value : ",location);<br>
+                    scanf("%d",&arr[location-1].value);<br>
+                    printf("\nenter %d cost : ",location);<br>
+                    scanf("%f",&arr[location-1].cost);<br>
+                    printf("modified data is\n");<br>
+                    display(arr, n);<br>
+                }<br>
+            }<br>
+            void search_data(struct comp_data arr[],int n)<br>
+            {<br>
+                int val;<br>
+                int i;<br>
+                printf("Enter value to search\n");<br>
+                scanf("%d",&val);<br>
+                for (i=0;i<n;i++)<br>
+                {<br>
+                    if (arr[i].value==val)<br>
+                    {<br>
+                        printf("data found at location %d\n",i+1);<br>
+                        printf("component name : %s\n",arr[i].comp_name);<br>
+                        printf("component value : %d\n",arr[i].value);<br>
+                        printf("component cost : %f\n",arr[i].cost);<br>
+                        break;<br>
+                    }<br>
+                }<br>
+                if (i==n)<br>
+                {<br>
+                    printf("NOT FOUND\n");<br>
+                }<br>
+            }<br>
+            void sort_data(struct comp_data arr[],int n)<br>
+            {<br>
+                struct comp_data temp;<br>
+                int i , j;<br>
+                for (i=0;i<n-1;i++)<br>
+                {<br>
+                    for (j=0; j < (n-i-1);j++)<br>
+                    {<br>
+                        if(arr[j].value>arr[j+1].value)<br>
+                        {<br>
+                            temp=arr[j];<br>
+                            arr[j]=arr[j+1];<br>
+                            arr[j+1]=temp;<br>
+                        }<br>
+                    }<br>
+                }<br>
+                printf("SORTED DATABASE ACCORDING TO VALUE IS\n");<br>
+                display(arr, n);<br>
+            }<br>
+            void main()<br>
+            {<br>
+                int size,choice,choice1;<br>
+                printf("Enter no of components : ");<br>
+                scanf("%d",&size);<br>
+                create(s,size);<br>
+                display(s,size);<br>
+                do<br>
+                {<br>
+                <br>
+                printf("\nEnter operation you want to perform\n1.APPEND\n2.MODIFY\n3.SEARCH\n4.SORT DATA\n");<br>
+                scanf("%d",&choice);<br>
+                switch (choice)<br>
+                {<br>
+                    case 1:<br>
+                        size=append(s,size);<br>
+                        break;<br>
+                    case 2:<br>
+                        modify(s,size);<br>
+                        break;<br>
+                    case 3:<br>
+                        search_data(s,size);<br>
+                        break;<br>
+                    case 4:<br>
+                        sort_data(s,size);<br>
+                        break;<br>
+                    default:<br>
+                        printf("INVALID CHOICE\n");<br>
+                }<br>
+                printf("Press1 to continue\n");<br>
+                scanf("%d",&choice1);<br>
+                <br>
+                <br>
+                }while(choice1==1);<br>
+            }<br>{% endblock code %}

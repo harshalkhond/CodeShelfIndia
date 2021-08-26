@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    
+</head>
+<body>
+    <div id="header">
+    </div> 
+    <div id="newtitle" style="display: none;"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde eveniet sunt quas facere alias libero doloremque sit assumenda? Ratione dicta voluptate sint dolor architecto nemo ipsa reprehenderit eveniet accusamus? Odio qui deserunt porro eos?</div>
+    <div id="newcontent" style="display: none;">kcjsbkdjfcb</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(function()
+        {
+            $("#header").load("base.html")
+        });
+    </script>
+    <script>
+        function whatis(){
+document.getElementById('newstyle').innerHTML = document.getElementById('newtitle').innerHTML;
+document.getElementById('content_code').innerHTML = document.getElementById('newcontent').innerHTML;
+}
+window.onload = function () {
+whatis();
+}
+        // document.getElementById("newstyle").innerHTML = document.getElementById("newhai").innerHTML;
+    </script>
+</body>
+
+</html>

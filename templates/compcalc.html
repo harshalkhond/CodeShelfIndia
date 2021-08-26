@@ -1,0 +1,138 @@
+{% extends 'base2.html' %}
+{% block heading %}cpp program to perform operations on complex numbers Add ,Subtract,Multiply,Divide{% endblock heading %}
+{% block code %}/*Write a program in c++ to perform following operations on complex numbers Add ,Subtract,Multiply,Divide<br>
+        Complex conjugate . Design the class for complex numbers representation and the operations to be performed . The <br>
+        objective of this assignment is to learn the concepts of classes and objects.<br>
+        <br>
+        #include <iostream><br>
+        using namespace std;<br>
+        <br>
+        class complex<br>
+        {<br>
+            float real;<br>
+            float img;<br>
+            <br>
+            public:<br>
+                void read();<br>
+                void display();<br>
+                void add(complex);<br>
+                void sub(complex);<br>
+                void mul(complex);<br>
+                void div(complex);<br>
+                void conj();<br>
+                <br>
+        };<br>
+        int main()<br>
+        {<br>
+            complex c1,c2;<br>
+            int ch;<br>
+            cout<<"Enter first complex number : ";<br>
+            c1.read();<br>
+            c1.display();<br>
+            cout<<"\n\nEnter second complex number : ";<br>
+            c2.read();<br>
+            c2.display();<br>
+            do<br>
+            {<br>
+               cout<<"\n\nwhich operation you want to perform";<br>
+               cout<<"\n\n1.Add 2.Substraction 3.Multiplication 4.Division 5.Conjugate of complex number : ";<br>
+               int choice;<br>
+              <br>
+               cin>>choice;<br>
+               switch (choice)<br>
+               {<br>
+                   case 1:<br>
+                    c1.add(c2);<br>
+                    break;<br>
+                case 2:<br>
+                    c1.sub(c2);<br>
+                    break;<br>
+                case 3:<br>
+                    c1.mul(c2);<br>
+                    break;<br>
+                case 4:<br>
+                    c1.div(c2);<br>
+                    break;<br>
+                case 5:<br>
+                        int choice1;<br>
+                        cout<<"\n\nThe number to find to find conjugate : ";<br>
+                        cin>>choice1;<br>
+                        switch (choice1)<br>
+                        {<br>
+                            case 1:<br>
+                                c1.conj();<br>
+                                break;<br>
+                            case 2:<br>
+                                c2.conj();<br>
+                        }<br>
+                    <br>
+                    <br>
+                    break;<br>
+                default:<br>
+                    cout<<"\n\nEnter valid choice";<br>
+                   }<br>
+                   cout<<"\n\nPress 1 to continue and 0 to exit : ";<br>
+                   cin>>ch;<br>
+            }while (ch==1);<br>
+            <br>
+            return 0;<br>
+        }<br>
+        <br>
+        void complex::read()<br>
+        {<br>
+            cout<<"\n\nEnter real part of complex number : ";<br>
+            cin>>real;<br>
+            cout<<"\nEnter imaginary part of complex number : ";<br>
+            cin>>img;<br>
+        }<br>
+        void complex::display()<br>
+        {<br>
+            if (img>0)<br>
+            {<br>
+                cout<<"\n\nThe complex number is : "<<real<<"+"<<img<<"i";<br>
+            }<br>
+            else<br>
+            cout<<"\n\nThe complex number is : "<<real<<img<<"i";<br>
+        }<br>
+        void complex::add(complex c2)<br>
+        {<br>
+            complex sum;<br>
+            sum.real=real+c2.real;<br>
+            sum.img=img+c2.img;<br>
+            sum.display();<br>
+            <br>
+        }<br>
+        void complex::sub(complex c2)<br>
+        {<br>
+            complex subt;<br>
+            subt.real=real-c2.real;<br>
+            subt.img=img-c2.img;<br>
+            subt.display();<br>
+        }<br>
+        void complex::mul(complex c2)<br>
+        {<br>
+            complex multiply;<br>
+            multiply.real=real*c2.real-img*c2.img;<br>
+            multiply.img=real*c2.img+img*c2.real;<br>
+            multiply.display();<br>
+        }<br>
+        void complex::div(complex c2)<br>
+        {<br>
+            complex divide , conjugate;<br>
+            int denominator;<br>
+            denominator=c2.real*c2.real+c2.img*c2.img;<br>
+            conjugate.real=c2.real;<br>
+            conjugate.img=-c2.img;<br>
+            divide.real=(real*conjugate.real-img*conjugate.img)/denominator;<br>
+            divide.img=(real*conjugate.img-img*conjugate.real)/denominator;<br>
+            divide.display();<br>
+        }<br>
+        void complex::conj()<br>
+        {<br>
+            complex conjugate1;<br>
+            conjugate1.real=real;<br>
+            conjugate1.img=-img;<br>
+            conjugate1.display();<br>
+        }<br>{% endblock code %}
+
+

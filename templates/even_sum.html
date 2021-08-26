@@ -1,0 +1,9 @@
+{% extends 'base2.html' %}
+{% block heading %}Python program to find sum of first n even numbers{% endblock heading %}
+{% block code %}n=int(input("Enter the no of even numbers : "))<br>
+        sum=0<br>
+        for i in range(2,2*n,2):<br>
+            sum+=i<br>
+        print("The sum of first n even numbers is : ",sum)<br>{% endblock code %}
+
+

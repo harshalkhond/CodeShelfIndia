@@ -1,0 +1,25 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
+
+<script>
+        $(function()
+        {
+            $("#header").load("base.html")
+        });
+    </script>
+    <script>
+        function whatis(){
+        document.getElementById('newstyle').innerHTML = document.getElementById('newtitle').innerHTML;
+        document.getElementById('content_code').innerHTML = document.getElementById('newcontent').innerHTML;
+        }
+    window.onload = function () {
+    whatis();
+    }
+</script>
+
+div->header
+div->newtitle display none
+div->newcontent display none
+
+

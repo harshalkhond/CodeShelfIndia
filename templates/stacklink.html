@@ -1,0 +1,82 @@
+{% extends 'base2.html' %}
+{% block heading %}C program to perform operations on stack(using linked list){% endblock heading %}
+{% block code %}<code>#include <<x>stdio.h></code> <br>
+      <code>#include <<x>stdlib.h></code> <br>
+        <br>
+        struct node <br>
+        {     <br>
+        int data;     <br>
+        struct node *next; <br>
+        }; <br>
+        typedef struct node node; <br>
+         <br>
+        node *top; <br>
+         <br>
+        void push(int value) <br>
+        {     <br>
+        node *tmp;     <br>
+        tmp = malloc(sizeof(node));     <br>
+        tmp -> data = value;     <br>
+        tmp -> next = top;     <br>
+        top = tmp; <br>
+        } <br>
+         <br>
+        int pop() <br>
+        {  <br>
+        if (top==NULL) <br>
+        {<br>
+             printf("STACK IS EMPTY!!!\n");  <br>
+         }<br>
+           else  <br>
+           {  <br>
+           node *tmp;     <br>
+           int n;     <br>
+           tmp = top;     <br>
+           n = tmp->data;     <br>
+           top = top->next;     <br>
+           printf("\nThe %d number is popped from stack\n",n);     <br>
+           free(tmp);    <br>
+           }<br>
+        }<br>
+        void display(node *head)<br>
+        {     <br>
+        while(head!=NULL)  <br>
+        {  <br>
+        printf("%d\n",head->data);  <br>
+        head=head->next;   <br>
+        } <br>
+        } <br>
+        int main() <br>
+        {  <br>
+        top==NULL;     <br>
+        int choice=1;  <br>
+        int choice1;  <br>
+        int value;  <br>
+        printf("ROLL NO : 22318\n");     <br>
+        do     <br>
+        {      <br>
+        printf("Enter choice :\n 1. ADD ELEMENT \n 2. DELETE ELEMENT \n 3. DISPLAY STACK\n");      <br>
+        scanf("%d",&choice1);<br>
+          switch (choice1)      <br>
+          {       <br>
+          case 1:     <br>
+             printf("\nEnter value to push on stack : ");<br>
+             scanf("%d",&value);        <br>
+             push(value);        <br>
+             break;     <br>
+            case 2:        <br>
+             pop();        <br>
+             break;       <br>
+          case 3:        <br>
+             display(top);        <br>
+             break;       <br>
+          default:        <br>
+              printf("INVALID INPUT\n");        <br>
+            break;   <br>
+          }   <br>
+          printf("\n PRESS 1 TO CONTINUE.......\n PRESS 0 TO EXIT.........\n");<br>
+          scanf("%d", &choice);     <br>
+          }while (choice==1); <br>
+          }<br>
+         <br>
+         <br>      {% endblock code %}

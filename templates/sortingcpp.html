@@ -1,0 +1,85 @@
+{% extends 'base2.html' %}
+{% block heading %}cpp program for inline functions{% endblock heading %}
+{% block code %} //Write a program in c++ to sort the numbers in an array using seperate functions for read , display , sort and swap.<br>
+//The objective of this assignment is to learn the concepts of input , output , functions , call by reference in c++. <br>
+
+<br>
+#include <iostream>    //iostream is library consist of input output function<br>
+using namespace std;   //Namespace :- region which decide the scope of identifiers (variables,classes,objects)<br>
+<br>
+void read (int [],int&);<br>
+void display (int [],int&);<br>
+void sort (int [],int&);<br>
+void swapr(int &,int&);<br>
+<br>
+int main()<br>
+{<br>
+	int a[50];<br>
+	cout<<"\nEnter the number of elements in an array : ";  //cout :- std output stream to display the result<br>
+	int n;<br>
+	cin>>n;      // >> Extraction operator to extract the input from the cin function <br>
+	int ch=1;<br>
+	do<br>
+	{<br>
+		cout<<"\nEnter choice\n1.Read Array\n2.Display Array\n3.Sort Array\n";<br>
+	    int choice;<br>
+		cin>>choice;<br>
+		switch (choice)<br>
+		{<br>
+			case 1:<br>
+				read(a,n);      //Calling read function<br>
+				break;<br>
+			case 2:<br>
+				cout<<"Elements in array are : ";        <br>
+				display(a,n);         //Calling display function<br>
+				break;<br>
+			case 3:<br>
+				cout<<"\nsorted elements are : ";<br>
+				sort(a,n);           //calling sort function<br>
+				display(a,n);<br>
+				break;<br>
+			default:<br>
+				cout<<"\nINVALID CHOICE";<br>
+				break;<br>
+	    }<br>
+	    cout<<"\nPress 1 to continue 0 to exit : ";<br>
+	    cin>>ch;<br>
+	}while (ch==1);<br>
+	return 0;<br>
+}<br>
+<br>
+void read(int a[],int &n)<br>
+{<br>
+	for (int i=0;i<n;i++)<br>
+	{<br>
+		cout<<"\nEnter Element";<br>
+		cin>>a[i];<br>
+	}<br>
+}<br>
+void display(int a[],int &n)<br>
+{<br>
+	for (int i=0;i<n;i++)<br>
+	{<br>
+		cout<<"\n"<<a[i];<br>
+	}<br>
+}<br>
+void sort(int a[],int &n)<br>
+{<br>
+	for(int i=0;i<n-1;i++)<br>
+	{<br>
+		for (int j=0;j<n-i-1;j++)<br>
+		{<br>
+			if (a[j]>a[j+1])<br>
+			{<br>
+				swapr(a[j],a[j+1]);<br>
+			}<br>
+		}<br>
+	}<br>
+}<br>
+void swapr(int &x,int&y)<br>
+{<br>
+	int temp;<br>
+	temp=y;<br>
+	y=x;<br>
+	x=temp;<br>
+}<br>{% endblock code %}
