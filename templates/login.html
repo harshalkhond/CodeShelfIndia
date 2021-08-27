@@ -46,7 +46,7 @@ form{
 <div class="global-container" style="max-width:400px; margin:auto; margin-top:30px; margin-bottom: 20px;">
 	<div class="card login-form">
 	<div class="card-body">
-		<h3 class="card-title text-center">Log in to Codepen</h3>
+		<h3 class="card-title text-center">Log in to CodeShelf</h3>
 		<div class="card-text">
 			<!--
 			<div class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect username or password.</div> -->
@@ -61,10 +61,10 @@ form{
 					<label for="password">Password</label>
 					<input type="password" class="form-control form-control-sm" id="exampleInputPassword1" name="password">
 				</div>
-				<button type="submit" class="btn btn-primary btn-block" style="margin:10px 10px 10px 10px;">Sign in</button>
+				<button type="submit" class="btn btn-primary btn-block" style="margin:10px 10px 10px 10px;">Log in</button>
 				
 				<div class="sign-up">
-					Don't have an account? <a href="{% url 'signup' %}">Create One</a>
+				Don't have an account? <button class="btn btn-primary btn-block" style="margin:10px 10px 10px 10px; ;"><a href="{% url 'signup' %}" style="text-decoration:none; color:white">Create One</a></button>
 				</div>
 			</form>
 		</div>

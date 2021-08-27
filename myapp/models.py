@@ -9,6 +9,8 @@ class Contact(models.Model):
     number=models.CharField(max_length=20)
     email=models.CharField(max_length=40,default="email")
     feedback=models.CharField(max_length=50,default="Feedback")
+    def __str__(self):
+        return self.name
 class Feedback(models.Model):
     name=models.CharField(max_length=122)
     feedback=models.CharField(max_length=150)

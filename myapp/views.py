@@ -30,14 +30,15 @@ def logoutuser(request):
     logout(request)
     return redirect("/login")
 def contact(request):
+    if request.user.is_anonymous:
+        return redirect("/login")
     if request.method=="POST":
         name=request.POST.get('name')
         feedback=request.POST.get('feedback')
         suggestion=request.POST.get('suggestion')
         feedback=Feedback(name=name,feedback=feedback,suggestion=suggestion)
         feedback.save()
-
-
+        messages.success(request,"Submitted Successfully")
     return render(request,"contact.html")
 def signup(request):
     try:
@@ -54,7 +55,7 @@ def signup(request):
             contact.save()
             return render(request,"login.html")
     except IntegrityError:
-        pass
+        messages.error(request,"signup not successful Try again")
     return render(request,"signup.html")
 
 def about(request):
