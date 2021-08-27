@@ -9,28 +9,29 @@ from django.db import IntegrityError
 # Create your views here.
 def index(request):
     if request.user.is_anonymous:
-        print(request.user.is_anonymous)
-        return redirect("/login")
+        return redirect("/signup")
     return render(request,"index.html")
 def loginuser(request):
     if request.method=='POST':
         username=request.POST.get('username')
         password=request.POST.get('password')
-        print(username)
-        print(password)
         user=authenticate(username=username,password=password)
         print(user)
         if user is not None:
+            messages.success(request,"login successful")
             login(request,user)
             return redirect("/")
         else:
+            messages.error(request,"Wrong username or Password")
             return render(request,"login.html")
     return render(request,"login.html")
 def logoutuser(request):
     logout(request)
+    messages.success(request,"Successfully Logged Out")
     return redirect("/login")
 def contact(request):
     if request.user.is_anonymous:
+        messages.error(request,"You need to login first")
         return redirect("/login")
     if request.method=="POST":
         name=request.POST.get('name')
@@ -38,21 +39,20 @@ def contact(request):
         suggestion=request.POST.get('suggestion')
         feedback=Feedback(name=name,feedback=feedback,suggestion=suggestion)
         feedback.save()
-        messages.success(request,"Submitted Successfully")
+        messages.success(request,"Feedback Submitted Successfully")
     return render(request,"contact.html")
 def signup(request):
     try:
         if request.method=="POST":
-            name=request.POST.get('name')
             username=request.POST.get('username')
             password=request.POST.get('password')
             email=request.POST.get('email')
             number=request.POST.get('number')
-            contact=Contact(name=name,username=username,password=password,number=number,email=email)
+            contact=Contact(username=username,password=password,number=number,email=email)
             myuser=User.objects.create_user(username,email,password)
-            myuser.first_name=name
             myuser.save()
             contact.save()
+            messages.success(request,"Successfully Signed up to Codeshelf")
             return render(request,"login.html")
     except IntegrityError:
         messages.error(request,"signup not successful Try again")
@@ -60,11 +60,13 @@ def signup(request):
 
 def about(request):
     if request.user.is_anonymous:
+        messages.error(request,"You need to login first")
         return redirect("/login")
     return render(request,"about.html")
 
 def Dsa(request):
     if request.user.is_anonymous:
+        messages.error(request,"You need to login first")
         return redirect("/login")
     return render(request,"Dsa.html")
 
