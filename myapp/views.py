@@ -28,11 +28,8 @@ def loginuser(request):
 def logoutuser(request):
     logout(request)
     messages.success(request,"Successfully Logged Out")
-    return redirect("/login")
+    return redirect("/contact")
 def contact(request):
-    if request.user.is_anonymous:
-        messages.error(request,"You need to login first")
-        return redirect("/login")
     if request.method=="POST":
         name=request.POST.get('name')
         feedback=request.POST.get('feedback')
@@ -40,6 +37,8 @@ def contact(request):
         feedback=Feedback(name=name,feedback=feedback,suggestion=suggestion)
         feedback.save()
         messages.success(request,"Feedback Submitted Successfully")
+        if request.user.is_anonymous:
+            return redirect("/login")
     return render(request,"contact.html")
 def signup(request):
     try:

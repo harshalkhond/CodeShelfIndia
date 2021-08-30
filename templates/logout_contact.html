@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container" style="margin-top:20px; margin-bottom:20px;">
+<form method="POST" action="/contact">
+{% csrf_token %}
+<div class="row mb-3">
+    <label for="name" class="col-sm-2 col-form-label">name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="name" name='name' Required>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="feedback" class="col-sm-2 col-form-label">feedback</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="feedback" name='feedback' Required>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="suggestion" class="col-sm-2 col-form-label">Suggestion</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="Suggestion" name='suggestion' Required>
+    </div>
+  </div>
+
+ 
+  <button type="submit" class="btn btn-primary">Submit feedback</button>
+</form></div>{% endblock body %}
