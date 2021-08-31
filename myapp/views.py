@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate ,login,logout
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.db import IntegrityError
+from django.contrib.auth import get_user_model
 # Create your views here.
 def index(request):
     if request.user.is_anonymous:
@@ -41,7 +42,10 @@ def contact(request):
             return redirect("/login")
     return render(request,"contact.html")
 def signup(request):
+
     try:
+        Usernames = get_user_model()
+        usersnamlist = Usernames.objects.all()
         if request.method=="POST":
             username=request.POST.get('username')
             password=request.POST.get('password')
@@ -49,12 +53,13 @@ def signup(request):
             number=request.POST.get('number')
             contact=Contact(username=username,password=password,number=number,email=email)
             myuser=User.objects.create_user(username,email,password)
-            myuser.save()
-            contact.save()
-            messages.success(request,"Successfully Signed up to Codeshelf")
-            return render(request,"login.html")
+            if (username not in usersnamlist):
+                myuser.save()
+                contact.save()
+                messages.success(request,"Successfully Signed up to Codeshelf")
+                return render(request,"login.html")
     except IntegrityError:
-        messages.error(request,"signup not successful Try again")
+        messages.error(request,"Username already taken or you may have refreshed the page...")
     return render(request,"signup.html")
 
 def about(request):

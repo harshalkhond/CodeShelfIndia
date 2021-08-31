@@ -1,5 +1,11 @@
 {% extends 'loginbase.html' %}
 {% block body %}
+{% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+  <strong>{{message}}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+    {% endfor %}
 <div class="container" style="margin-top:20px; margin-bottom:20px;">
 
 
