@@ -25,4 +25,9 @@
 
  
   <button type="submit" class="btn btn-primary">Submit feedback</button>
-</form></div>{% endblock body %}
+  <br>
+  {% if user.is_authenticated %}
+{% else %} <P style="margin-top:35px; margin-bottom:-9px;" >Don't want to give feedback <a href="/login">click here</p>
+{% endif %}
+</form></div>
+{% endblock body %}

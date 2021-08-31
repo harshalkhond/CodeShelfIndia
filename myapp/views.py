@@ -18,7 +18,7 @@ def loginuser(request):
         user=authenticate(username=username,password=password)
         print(user)
         if user is not None:
-            messages.success(request,"login successful")
+            messages.success(request, f" Welcome {user.username} !!! login successful")
             login(request,user)
             return redirect("/")
         else:
