@@ -24,5 +24,5 @@ admin.site.site_title = "Harshal Portals"
 admin.site.index_title = "Welcome to portal"
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include("resultapp.urls")),    #if this '' path matches then send it to home.urls
+    path('', include("myapp.urls")),    #if this '' path matches then send it to home.urls
 ]
