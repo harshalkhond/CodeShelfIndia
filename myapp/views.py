@@ -9,8 +9,6 @@ from django.db import IntegrityError
 from django.contrib.auth import get_user_model
 # Create your views here.
 def index(request):
-    if request.user.is_anonymous:
-         return redirect("/signup")
     return render(request,"index.html")
 def loginuser(request):
     if request.method=='POST':
