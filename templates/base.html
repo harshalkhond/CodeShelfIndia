@@ -55,7 +55,7 @@
             <!-- <button type="button" class="btn btn-outline-light btn-sm" style="margin-right: 10px;border-radius: 6px;">SignIn</button>
             <button type="button" class="btn btn-outline-light btn-sm" style="margin-right: 10px; border-radius: 6px;">Login</button> -->
            {% if user.is_authenticated %} <a href="/logout"><button class="btn btn-outline-secondary" type="submit" style="width: 80px;background-color: aliceblue; margin-right:5px">Logout</button></a> 
-           {% else %} <a href="/login"><button class="btn btn-outline-secondary" type="submit" style="width: 80px;background-color: aliceblue; margin-right:5px">Login</button></a> {% endif %}
+           {% else %} <a href="/login"><button class="btn btn-outline-secondary" type="submit" style="width: 80px;background-color: aliceblue; margin-right:5px">Login</button></a> 0{% endif %}
             <a href="{%url 'new'%}"><button class="btn btn-outline-secondary" type="submit" style="width: 150px;background-color: aliceblue;"> Search</button></a>
           
         </div>

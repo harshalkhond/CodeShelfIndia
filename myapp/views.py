@@ -131,8 +131,6 @@ def newfile(request):
 def oddeven(request):
     return render(request,"oddeven.html")
 def OOPindex(request):
-    if request.user.is_anonymous:
-        return redirect("/login")
     return render(request,"OOPindex.html")
 def op_comp(request):
     return render(request,"op_comp.html")
@@ -153,8 +151,6 @@ def pysub(request):
 def pysum(request):
     return render(request,"pysum.html")
 def python(request):
-    if request.user.is_anonymous:
-        return redirect("/login")
     return render(request,"python.html")
 def qlink(request):
     return render(request,"qlink.html")
