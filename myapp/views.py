@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from django.shortcuts import render ,HttpResponse,redirect
-from myapp.models import Contact, Feedback
+from .models import Contact, Feedback
 from datetime import datetime
 from django.contrib.auth import authenticate ,login,logout
 from django.contrib.auth.models import User
@@ -9,8 +9,8 @@ from django.db import IntegrityError
 from django.contrib.auth import get_user_model
 # Create your views here.
 def index(request):
-    if request.user.is_anonymous:
-        return redirect("/signup")
+    # if request.user.is_anonymous:
+    #     return redirect("/signup")
     return render(request,"index.html")
 def loginuser(request):
     if request.method=='POST':
@@ -63,15 +63,15 @@ def signup(request):
     return render(request,"signup.html")
 
 def about(request):
-    if request.user.is_anonymous:
-        messages.error(request,"You need to login first")
-        return redirect("/login")
+    # if request.user.is_anonymous:
+    #     messages.error(request,"You need to login first")
+    #     return redirect("/login")
     return render(request,"about.html")
 
 def Dsa(request):
-    if request.user.is_anonymous:
-        messages.error(request,"You need to login first")
-        return redirect("/login")
+    # if request.user.is_anonymous:
+    #     messages.error(request,"You need to login first")
+    #     return redirect("/login")
     return render(request,"Dsa.html")
 
 def bst(request):
